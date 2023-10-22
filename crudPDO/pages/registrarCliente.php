@@ -121,7 +121,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $rol_cli = $_POST['rol'];
     $contrasena_cli = $_POST['contrasena'];    
 
-    $contrasena_cli = password_hash($contrasena_cli,PASSWORD_DEFAULT,array('password' =>10));
+    $contrasena_cli = password_hash($contrasena_cli,PASSWORD_DEFAULT,array('password' =>7));
 
     $clientes = new Usuario();
 

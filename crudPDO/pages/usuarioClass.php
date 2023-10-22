@@ -57,10 +57,10 @@ class Usuario{
                     <td><?php echo $fila['rol_cli']?></td>
                     <td><?php echo $fila['contrasena_cli']?></td>                    
                     <td>
-                        <a href="updateCliente.php=<?php echo $fila['numeroDocumento_cli'] ?>"><img src="../img/actualizar.png" alt="imagenActualizar" width="30px" ></a>
+                        <a href="updateCliente.php?numeroDocumento='<?php echo $fila['numeroDocumento_cli'] ?>'"><img src="../img/actualizar.png" alt="imagenActualizar" width="30px" ></a>
                     </td>
                     <td>
-                        <a href="eliminarCliente.php?numeroDocumento_cli=<?php echo $fila['numeroDocumento_cli'] ?>"><img src="../img/eliminar.png" alt="imagenEliminar" width='30px'></a>                
+                        <a href="eliminarCliente.php?numeroDocumento_cli='<?php echo $fila['numeroDocumento_cli'] ?>'"><img src="../img/eliminar.png" alt="imagenEliminar" width='30px'></a>                
                     </td>
                 </tr>
 
@@ -77,131 +77,28 @@ class Usuario{
                 alert('El usuario ha sido eliminado correctamente...');
                 window.location = '../index.php';
         </script>";    
-    }
+    }    
 
-    public function actualizarCliente($numeroCliente_cli){
-        $sql = 'SELECT * FROM tb_clientes WHERE numeroDocumento_cli = "$numeroCliente_cli"';
-        $seleccionarUno = Conexion::conexion()->query($sql);
-        $seleccionarUno->setFetchMode(PDO::FETCH_ASSOC);
-        $seleccionarUno->execute();
+    public function actualizarCliente($numeroDocumento_cli, $correoElectronico_cli, $nombres_cli, $apellidos_cli, $rol_cli, $contrasena_cli) {
+        $sql = "UPDATE tb_clientes SET correoElectronico_cli = :correo, nombres_cli = :nombres, apellidos_cli = :apellidos, rol_cli = :rol, contrasena_cli = :contrasena WHERE numeroDocumento_cli = :numeroDocumento";
         
-        while($fila = $seleccionarUno->fetch()){
-
-            $numeroDocumento_cli = $fila['numeroDocumento_cli'];
-            $correoElectronico_cli = $fila['correoElectronico_cli'];
-            $nombres_cli = $fila['nombres_cli'];
-            $apellidos_cli = $fila['apellidos_cli'];
-            $rol_cli = $fila['rol_cli'];
-            $contrasena_cli = $fila['contrasena_cli'];    
-    ?>
-
-        <!--CDN deBootStrap 5-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <!--Estilos de la pagina-->
-        <link rel="stylesheet" href="../css/registrarClientes.css">
-        <!--Icono de la pestaña-->
-        <link rel="shortcut icon" href="../img/logoPhp.png" type="image/x-icon">
-
-        <body>
-    <!--Encabezado de la pagina-->
-        <header>
-            <h1 class="tituloEncabezado">Actualizacion - Hotel Pegasus</h1>
-            <div class="logoIzquierdo">
-                <img src="../img/playa.png" alt="logoIzquierda">
-            </div>
-        </header>
-
-        <!--Formulario de registro-->
-        <section class="formRegistro">
-            <form class="container contenedor" method="post">
-                <div class="campo">
-                    <label for="numeroDocumento">Numero de Documento:</label>
-                    <input type="text" name="numeroDocumento" id="numeroDocumento" value="<?php echo $fila['numeroDocumento_cli']; ?>" disabled required>
-                </div>
-
-                <br>
-
-                <div class="campo">
-                    <label for="email">Correo Electronico: </label>
-                    <input type="email" name="email" id="email" value="<?php echo $fila['correoElectronico_cli']; ?>" required>
-                </div>
-
-                <br>
-
-                <div class="campo">
-                    <label for="nombre">Nombres del usuario:</label>
-                    <input type="text" name="nombre" id="nombre" value="<?php echo $fila['nombres_cli']; ?>" required>
-                </div>
-
-                <br>
-
-                <div class="campo">
-                    <label for="apellido">Apellidos del usuario:</label>
-                    <input type="text" name="apellido" id="apellido" value="<?php echo $fila['apellidos_cli']?>" required>
-                </div>            
-            
-                <br>
-
-                
-                <div class="campo">
-                    <label for="rol">Rol de usuario:</label>
-                    <select class="input" name="rol" id="rol"required>
-                        <option value='<?php echo $fila['rol_cli']?>'><?php echo $fila['rol_cli']?></option>
-                        <option value="Administrador">Administrador</option>
-                        <option value="Cliente">Cliente</option>
-                        <option value="Recepcionista">Recepcionista</option>
-                        <option value="Mesero">Mesero</option>
-                        <option value="Room Service">Room Service</option>
-                    </select>
-                </div>
-
-                <br>
-
-                <div class="campo">
-                    <label for="contrasena">Contraseña del usuario:</label>
-                    <input type="password" name="contrasena" id="contrasena" value="<?php echo $fila['contrasena_cli'] ?>" required>
-                </div>
-
-                <br>
-
-                <input class="boton" type="submit" value="Actualizar">
-                <br>
-                <a href="mostrarCliente.php">Volver al inicio</a>
-                <br>
-            </form>
-        </section>
-
-        <!--Pie de Pagina-->
-        <footer>
-            <div class="contenedorFooter">
-                <img src="../img/hotel.png" alt="hotelIcono">
-                <h3>Hotel Pegasus</h3>
-            </div>
-        </footer>
-
-    </body>
-
-    <?php
-
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $correoElectronico_cli = $_POST['email'];
-        $nombres_cli = $_POST['nombre'];
-        $apellidos_cli = $_POST['apellido'];
-        $rol_cli = $_POST['rol'];
-        $contrasena_cli = $_POST['contrasena'];    
-
-        $contrasena_cli = password_hash($contrasena_cli,PASSWORD_DEFAULT,array('password' =>10));
-
-        $sql = 'UPDATE tb_clientes SET correoElectronico_cli = "$correoElectronico_cli", nombres_cli = "$nombres_cli", apellidos_cli = "$apellidos_cli", rol_cli = "$rol_cli", contrasena_cli = "$contrasena_cli" WHERE numeroDocumento_cli = "$numeroDocumento_cli"';
-        $actualizarUno = Conexion::conexion()->query($sql);
-
-        $actualizarUno->execute();
-
+        $actualizarCliente = Conexion::conexion()->prepare($sql);
+        
+        $actualizarCliente->bindParam(':correo', $correoElectronico_cli);
+        $actualizarCliente->bindParam(':nombres', $nombres_cli);
+        $actualizarCliente->bindParam(':apellidos', $apellidos_cli);
+        $actualizarCliente->bindParam(':rol', $rol_cli);
+        $actualizarCliente->bindParam(':contrasena', $contrasena_cli);
+        $actualizarCliente->bindParam(':numeroDocumento', $numeroDocumento_cli);
+        
+        if ($actualizarCliente->execute()) {
+            echo "<script type='text/javascript'>
+                alert('El usuario ha sido actualizado correctamente...');
+                window.location = '../index.php';
+            </script>";
+        } else {
+            echo "Hubo un error actualizando el usuario.";
         }
-
-    
-    }
-
     }
 }
 ?>
