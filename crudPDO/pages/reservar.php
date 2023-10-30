@@ -41,6 +41,14 @@
     <!--Formulario de registro-->
     <section class="formRegistro">
         <form class="container contenedor" method="post" action="#">
+
+            <div class="campo">
+                <label for="codigoReserva">Codigo de la reserva:</label>
+                <input type="number" name="codigoReserva" id="codigoReserva" required>
+            </div>
+
+            <br>
+
             <div class="campo">
                 <label for="numeroDoc">Numero de Documento:</label>
                 <input type="number" name="numeroDoc" id="numeroDoc" required>
