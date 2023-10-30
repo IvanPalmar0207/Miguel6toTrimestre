@@ -15,6 +15,9 @@
 <body>
     <!--Encabezado de la pagina-->
     <header>
+        <div class="logoIzquierdo">
+            <img src="../img/playa.png" alt="logoIzquierda">
+        </div>
         <h1 class="tituloEncabezado">Visualizacion de Datos - Hotel Pegasus</h1>
         <div class="logoIzquierdo">
             <img src="../img/playa.png" alt="logoIzquierda">
@@ -24,7 +27,7 @@
     <!--Opciones-->
     <ul>
         <li>
-            <a href="../../index.php">Inicio</a>
+            <a href="../index.php">Inicio</a>
         </li>
     </ul>
 <?php

@@ -19,19 +19,30 @@
 <body>
     <!--Encabezado de la pagina-->
     <header>
+        <div class="logoIzquierdo">
+            <img src="../img/playa.png" alt="logoIzquierda">
+        </div>
         <h1 class="tituloEncabezado">Bienvenido al Hotel Pegasus</h1>
         <div class="logoIzquierdo">
             <img src="../img/playa.png" alt="logoIzquierda">
         </div>
     </header>
 
+    <!--Barra de navegacion-->
+    <div class="contenedorEnlaces">
+        <ul>
+            <li><a href="../index.php">Inicio</a></li>
+        </ul>
+    </div>
+    
     <!--Formulario de registro-->
     <section class="formRegistro">
         <form class="container contenedor" method="post" action="#">
             <div class="campo">
                 <label for="numeroDoc">Numero de Documento:</label>
-                <input type="text" name="numeroDoc" id="numeroDoc" required>
+                <input type="number" name="numeroDoc" id="numeroDoc" required>
             </div>
+                    
             <br>
 
             <div class="campo">
@@ -91,17 +102,30 @@
 
             <input class="boton" type="submit" value="Registrarse">
             <br>
-            <a href="../index.php">Ya tienes cuenta?</a>
+            <a href="./iniciarSesion.php">Ya tienes cuenta?</a>
             <br>
         </form>
     </section>
 
-    <!--Pie de Pagina-->
-    <footer>
-        <div class="contenedorFooter">
-            <img src="../img/hotel.png" alt="hotelIcono">
-            <h3>Hotel Pegasus</h3>
+     <!--Footer y las redes sociales-->
+     <footer class="d-flex flex-column align-items-center justify-content-center">
+        <p class="footer-texto text-center">El SENA quiere brindarte la mejor estadia.
+            <br>Ven, comparte y disfruta en nuestro Hotel.</p>
+        <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+            <a href="https://web.facebook.com/sena.soacha/?locale=es_LA&_rdc=1&_rdr" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://twitter.com/SENASoacha?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-twitter"></i>
+            </a>
+            <a href="https://senasoachacide.blogspot.com/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-mortarboard-fill"></i>
+            </a>
+            <a href="mailto:servicioalciudadano@sena.edu.co " target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-envelope"></i>
+            </a>
         </div>
+        <div class="derechos-de-autor">Creado por: Ivan David Palmar Martinez&#169;</div> 
     </footer>
 
 </body>

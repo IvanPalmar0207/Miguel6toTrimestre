@@ -1,0 +1,27 @@
+#Cuerpo del archivo .htaccess
+Options All -Indexes
+RewriteRule ^([a-zA-Z0-9/ñÑ-]+)$ index.php?views=$1
+
+#Errores de acceso y permisos, 403 y 404
+ErrorDocument 404 /miguel6to-IvanPalmar/crudPDO/error404.php
+ErrorDocument 403 /miguel6to-IvanPalmar/crudPDO/error403.php
+
+#Cuando el sitio se encuentra en mantenimiento
+#RewriteEngine On
+##RewriteCond %{REQUEST_UTI}!/crudPDO/construccion.php$
+#RewriteCond %{REMOTE_ADDR} !^123\.123\.123\.123
+#RewriteRule $ /crudPDO/construccion.php [R=302,L]
+
+#Bloqueo de archivos importantes
+<files Conexion.php>
+order allow,deny
+deny from all
+</files>
+
+<files usuarioClass.php>
+order allow,deny
+deny from all
+</files>
+
+#Manejo de Bots
+RewriteRule ^.*$ http://fakeroute.com [R,L]

@@ -1,6 +1,6 @@
 <?php
 
-$_SESSION = FALSE;
+$_SESSION = True;
 
 ?>
 
@@ -9,33 +9,31 @@ $_SESSION = FALSE;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="shortcut icon" href="./img/logoPhp.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/paginaPrincipal.css">
+    <link rel="shortcut icon" href="../img/logoPhp.png" type="image/x-icon">
     <!--CDN de los iconos de BootStrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!--CDN de BootStrap 5-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title>HOTEL PEGASUS</title>
+    <title>HOME</title>
 </head>
 <body>
 
     <!--Encabezado de la pagina-->
     <header>
         <div class="logoIzquierdo">
-            <img src="./img/playa.png" alt="logoIzquierda">
+            <img src="../img/playa.png" alt="logoIzquierda">
         </div>
         <h1 class="tituloEncabezado">HOTEL PEGASUS</h1>
         <div class="logoIzquierdo">
-            <img src="./img/playa.png" alt="logoIzquierda">
+            <img src="../img/playa.png" alt="logoIzquierda">
         </div>
     </header>
 
     <!--Barra de navegacion-->
     <div class="contenedorEnlaces">
         <ul>
-            <li><a href="./pages/iniciarSesion.php">Iniciar Sesion</a></li>
-            <li><a href="./pages/registrarCliente.php">Registrar Usuarios</a></li>
-            <li><a href="./pages/mostrarCliente.php">Mostrar Usuarios</a></li>
+            <li><a href="../index.php">Cerrar Sesion</a></li>
         </ul>
     </div>
 
@@ -56,7 +54,7 @@ $_SESSION = FALSE;
                     </p>
                 </div>
                 <div class="imagenDescripcion">
-                    <img src="./img/spa.jpg" alt="imagenSpa" width="100px" height="100px">
+                    <img src="../img/spa.jpg" alt="imagenSpa" width="100px" height="100px">
                 </div>
             </div>
         </div>

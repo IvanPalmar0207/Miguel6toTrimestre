@@ -7,7 +7,7 @@ class Usuario{
 
     }
 
-    public function insertarDatos(string $numeroDocumento_cli, string $tipoDocumento_cli, string $correoElectronico_cli, string $nombres_cli, string $apellidos_cli, string $rol_cli, string $contrasena_cli){
+    public function insertarDatos(int $numeroDocumento_cli, string $tipoDocumento_cli, string $correoElectronico_cli, string $nombres_cli, string $apellidos_cli, string $rol_cli, string $contrasena_cli){
         $insercionClientes = Conexion::conexion()->prepare('INSERT INTO tb_clientes VALUES (?,?,?,?,?,?,?)');
 
         $insercionClientes->bindParam(1,$numeroDocumento_cli);
@@ -57,7 +57,7 @@ class Usuario{
                     <td><?php echo $fila['rol_cli']?></td>
                     <td><?php echo $fila['contrasena_cli']?></td>                    
                     <td>
-                        <a href="updateCliente.php?numeroDocumento='<?php echo $fila['numeroDocumento_cli'] ?>'"><img src="../img/actualizar.png" alt="imagenActualizar" width="30px" ></a>
+                        <a href="updateCliente.php?numeroDocumento_cli='<?php echo $fila['numeroDocumento_cli']?>'"><img src="../img/actualizar.png" alt="imagenActualizar" width="30px" ></a>
                     </td>
                     <td>
                         <a href="eliminarCliente.php?numeroDocumento_cli='<?php echo $fila['numeroDocumento_cli'] ?>'"><img src="../img/eliminar.png" alt="imagenEliminar" width='30px'></a>                
@@ -75,30 +75,33 @@ class Usuario{
         Conexion::conexion()->query($sql)->execute();        
         echo "<script type='text/javascript'>
                 alert('El usuario ha sido eliminado correctamente...');
-                window.location = '../index.php';
+                window.location = './mostrarCliente.php';
         </script>";    
     }    
+    public function iniciarSesion(string $numeroDocumento_cli ,string $correoElectronico_cli, string $contrasena_cli){
 
-    public function actualizarCliente($numeroDocumento_cli, $correoElectronico_cli, $nombres_cli, $apellidos_cli, $rol_cli, $contrasena_cli) {
-        $sql = "UPDATE tb_clientes SET correoElectronico_cli = :correo, nombres_cli = :nombres, apellidos_cli = :apellidos, rol_cli = :rol, contrasena_cli = :contrasena WHERE numeroDocumento_cli = :numeroDocumento";
-        
-        $actualizarCliente = Conexion::conexion()->prepare($sql);
-        
-        $actualizarCliente->bindParam(':correo', $correoElectronico_cli);
-        $actualizarCliente->bindParam(':nombres', $nombres_cli);
-        $actualizarCliente->bindParam(':apellidos', $apellidos_cli);
-        $actualizarCliente->bindParam(':rol', $rol_cli);
-        $actualizarCliente->bindParam(':contrasena', $contrasena_cli);
-        $actualizarCliente->bindParam(':numeroDocumento', $numeroDocumento_cli);
-        
-        if ($actualizarCliente->execute()) {
-            echo "<script type='text/javascript'>
-                alert('El usuario ha sido actualizado correctamente...');
-                window.location = '../index.php';
-            </script>";
+        $sql = "SELECT * FROM tb_clientes WHERE numeroDocumento_cli = :numeroDocumento AND correoElectronico_cli = :correo AND contrasena_cli = :contrasena";
+
+        $selecionUno = Conexion::conexion()->prepare($sql);
+
+        $selecionUno->bindParam(':numeroDocumento',$numeroDocumento_cli);
+        $selecionUno->bindParam(':correo',$correoElectronico_cli);
+        $selecionUno->bindParam(':contrasena',$contrasena_cli);        
+        $selecionUno->execute();
+
+        $usuarioDB = $selecionUno->fetch(PDO::FETCH_ASSOC);
+
+        if ($usuarioDB) {
+            // Las credenciales son válidas, inicio de sesión exitoso
+            session_start();        
+            // Puedes redirigir a otra página una vez que el inicio de sesión sea exitoso
+            header('Location: index.php');
+            exit;
         } else {
-            echo "Hubo un error actualizando el usuario.";
+            // Credenciales inválidas
+            echo 'Credenciales inválidas. Inténtalo de nuevo.';
         }
     }
+
 }
 ?>
