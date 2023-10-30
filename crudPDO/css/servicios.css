@@ -1,0 +1,327 @@
+ /*
+    Tipografia
+*/
+        
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+
+
+/*
+    Estilos Generales
+*/
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-family: 'Rubik Dirt', cursive;
+}
+
+/*Barra de navegacion*/
+
+.navbar{
+    width: 100%;
+    padding: 2rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.navbar a{
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: #71d7b2;
+    margin-left: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar p{
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 2.5rem;
+    margin-left: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.navbar-collapse{
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*Servicios del Hotel*/
+
+.serviciosSection{
+    height: 700px;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.serviciosSection h1{
+    margin-top: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.serviciosSection .contenedor{
+    max-width: 600px;
+    text-align: center;
+}
+
+.serviciosSection p{
+    text-align: center;
+    font-size:1.1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.serviciosSection img{
+    width: 450px;
+    border-radius: 20%;
+    margin:20px 0px 20px 0px;
+}
+
+.seccion-blanca{
+    background: url('../img/servicios/serviciosFondo.jpg') fixed no-repeat;
+    background-size: cover;
+}
+.carrousel{
+    height: 600px;
+}
+
+.carrousel .contenedor{
+    max-width: 800px;
+    margin-top: -50px;
+    margin-bottom: 10px;
+}
+
+.carrousel img{
+    height: 440px;
+    width: 100%;
+    border-radius: 90px;
+}
+
+.bar{
+   height: 1150px; 
+   background-color: #f6fffb;
+   color: black;   
+   padding-bottom: 10px;
+}
+
+.bar .barCards{
+    width: 30%;
+    margin: 15px 15px 15px 15px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0px 20px 20px 20px;
+}
+
+.barCards h5{
+    font-weight: bold;
+    color: #7eb7a1;
+    margin-bottom: 10px;
+}
+
+.barCards img{
+    width: 160px;
+    height: 120px;
+}
+
+.bar .contenedor{
+    max-width: 850px;
+}
+
+.bar .titulos{
+    font-weight: bolder;
+    font-size: 1.2rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+.bar .contenedorCartas{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bar h1{
+    font-family: 'Oswald', sans-serif;
+}
+
+.piscina{
+    height: 800px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background: url('../img/servicios/serviciosFondo.jpg') fixed no-repeat;
+    background-size: cover;
+    color: black;
+}
+
+.piscina h1{
+    margin-top: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.piscina .contenedor{
+    max-width: 850px;
+    text-align: center;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.piscina p{
+    text-align: center;
+    font-size:1.1rem;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+}
+
+.piscina img{
+    width: 450px;
+    border-radius: 20%;
+    margin:20px 0px 20px 0px;
+}
+
+.roomService{
+    height: 570px; 
+    padding-bottom: 10px;
+    background-color: #f6fffb;
+    color: black;
+}
+
+.roomService .contenedor{
+    max-width: 850px;
+}
+
+.roomService .titulo{
+    font-weight: bolder;
+    font-size: 1.2rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+/*Redes Sociales*/
+
+footer{
+    min-height: 250px;
+    color: #0a0a23;
+    background-color: white;
+}
+
+.footer-logo{
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+}
+
+.footer-texto{
+    font-size: 1.5rem;
+    padding: 20px;
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.iconos-redes-sociales a{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 50px;
+    transition: all 0.2s ease-in;
+    margin-top: -10px;
+}
+
+.iconos-redes-sociales i{
+    color: black;
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales a:hover{
+    border: 2px solid  #7eb7a1;
+}
+
+.iconos-redes-sociales a:hover i{
+    color: #7eb7a1;
+}
+
+.derechos-de-autor{
+    text-align: center;
+    font-size: 15px;
+    color: #7ad0b1;
+    padding: 20px;
+}
+
+/*Adaptable o Responsiva*/
+
+@media screen and (max-width:600px){
+    .navbar-brand{
+       display: none; 
+    }
+    .navbar p{
+        font-size: 1.5rem;
+        margin-left: 25%;
+        font-weight: bold;
+    }
+    .navbar a{
+        margin-left: 0px;
+    }
+
+    .serviciosSection{
+        height: 790px;
+    }
+
+    .serviciosSection{
+        padding: 0px;
+    }
+
+    .serviciosSection p{
+        text-align: justify;
+        font-size: 1.2rem;
+    }
+    
+    .serviciosSection img{
+        width: 250px;
+        border-radius: 20%;
+        margin:20px 0px 20px 0px;
+    }
+
+    .footer-texto{
+        font-size: 1.4rem;
+    }
+
+    .carrousel img{
+        width: 250px;
+        height: 250px;
+    }
+    .bar{
+        height: 2050px;
+        padding-top: 20px;
+    }
+
+    .bar .contenedorCartas{
+        display: block;
+    }
+
+    .barCards img{
+        width: 170px;
+    }
+
+    .bar .barCards{
+        width: 92%;
+    }
+
+    .piscina{
+        height: 1000px;
+    }
+
+    .piscina img{
+        height: 150px;
+    }
+
+    .roomService img{
+        height: 190px;
+    }
+}

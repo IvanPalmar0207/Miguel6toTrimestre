@@ -3,7 +3,7 @@
 class Conexion{
 
     //Varibles de conexion
-    private static string $driver = 'mysql:host=localhost;port=3306;dbname=hotelpegasusprueba';
+    private static string $driver = 'mysql:host=localhost;port=3307;dbname=hotelpegasusprueba';
     private static string $nombreUsuario = 'root';
     private static string $contrasenaUsuario = '';
     private static $opciones = [

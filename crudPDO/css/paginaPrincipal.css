@@ -1,7 +1,7 @@
  /*
     Tipografia
 */
-
+        
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
 
@@ -9,7 +9,6 @@
 /*
     Estilos Generales
 */
-
 
 section{
     display: flex;
@@ -19,123 +18,198 @@ section{
 }
 
 h1{
-    font-size: 3rem;
-    font-family: 'Oswald', sans-serif;
-}
-
-/*Encabezado de la pagina*/
-header{
-    display: flex;
-    justify-content: center;
-    height: 120px;
-}
-
-header .tituloEncabezado{
-    align-self: center;
-    margin-left: 10px;
-}
-
-header .logoIzquierdo{
-    width: -100%;
-    padding: 32px;
-}
-
-.logoIzquierdo img{
-    width: 65px;
-    height: 60px;
+    font-size: 2.5rem;
+    font-family: 'Rubik Dirt', cursive;
 }
 
 /*Barra de navegacion*/
 
-.contenedorEnlaces{
-    background-color:#cbffec;
+.navbar{
     width: 100%;
-    height: 50px;
-    padding-top: 10px;
+    padding: 2rem;
+    background-color: rgb(255, 255, 255);
 }
 
-ul{
-    display: inline-flex;
-    align-items: center;
-    list-style: none;
-}
-
-li a{
-    color: black;
-    text-decoration: none;
-    font-size: 20px;
+.navbar a{
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: #71d7b2;
+    margin-left: 20px;
     font-family: 'Roboto', sans-serif;
-    margin-left: 50px;
-    font-weight: bold;
 }
 
-li a:hover{
-    text-decoration: underline;
+.navbar p{
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 2.5rem;
+    margin-left: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.navbar-collapse{
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*Descripcion Hotel*/
+
+.aboutHotel{
+   height: 520px;
+   padding: 10px;
+   background: url('../img/hotelFondo.jpg') fixed no-repeat;
+   background-size: cover;
+   color: black;
+}
+
+.aboutHotel .contenedor{
+    max-width: 600px;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.aboutHotel p{
+    text-align: center;
+    font-size:1.1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.aboutHotel img{
+    border-radius: 20%;
+    margin:20px 0px 20px 0px;
+}
+
+/*Seccion de Servicios*/
+
+.servicios{
+    padding: 40px 20px 60px 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+.tituloServicios{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 30px;
+    margin-top: -10px;
+}
+
+.servicios .columna{
+    background-color: #ebfff7;
+    padding: 20px;
+    border: 2px solid rgb(177, 177, 177);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: all 0.2s ease-in;
+    text-align: center;
+}
+
+.servicios .columna:hover{
+    color: black;
+    background-color: rgb(242, 255, 252);
+}
+
+.servicios i{
+    font-size: 2.5rem;
+    color: black;
+    background-color: white;
+    padding: 8px 19px;
+    border-radius: 50%;
+}
+
+
+.servicios-titulo{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.badges-contenedor{
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.badge{
+    margin: 5px;
+    color: black;
+    background-color: white;
 }
 
 /*
-    Descripcion de la Pagina
+    Seccion de Opiniones
 */
 
-.descripcionContenido{
-    width: 100%;
-    height: 500px;
-    background: url('../img/hotelDescripcion.jpg');
-    background-repeat: no-repeat;
+.testimonios{
+    background: url('../img/hotelFondo.jpg') fixed no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    padding: 40px 40px 80px 40px;
 }
 
-.contenedorDescripcion{
-    width: 80%;
-    background-color: rgb(255, 255, 255);
+.testimonios .carousel{
+    max-width: 900px;
+    background-color: white;
+    padding: 20px;
     border-radius: 30px;
-    height: 420px;
-    padding-top: 37px;
+    margin-top: 50px;
+    text-align: center;
 }
 
-.contenedorDescripcion i{
-    margin-left: 35px;
-    margin-right: 35px;
+.testimonios .opinionTexto{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
 }
 
-.contenedorDescripcion h2{
-    font-size: 2.5rem;
+.carousel-item{
+    height: 500px;
+}
+
+.carousel-item .container{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonios-imagen{
+    height: 160px;
+    width: 170px;
+    margin: 30px 10px 30px;
+}
+
+.testimonio-texto{
+    max-width: 70%;
+    font-size: 1.3rem;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 135px;
+}
+
+
+.testimonio-info{
+    margin-bottom: 0;
+}
+
+.testimonio-info .personaOpinion{
+    font-size: 1.2rem;
     font-family: 'Oswald', sans-serif;
     text-align: center;
-    color: #73c2ab;
 }
 
-.componentesDescripcion{
-    display: flex;
-    justify-content: space-between;
-    padding-left: 35px;
-    margin-top: 30px;
-}
-
-.textoDescripcion{
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
-    width: 70%;
-}
-
-.imagenDescripcion{
-    width: 30%;
+.testimonio-info .fecha{
+    font-size: 1rem;
+    color: #000000;
+    font-family: 'Oswald', sans-serif;
     text-align: center;
 }
 
-.imagenDescripcion img{
-    width: 80%;
-    height: 90%;
-    border-radius: 20px;
-}
-
-/*
-    Pie de pagina
-*/
+/*Redes Sociales*/
 
 footer{
-    min-height: 200px;
+    min-height: 250px;
     color: #0a0a23;
     background-color: white;
 }
@@ -174,187 +248,83 @@ footer{
 }
 
 .iconos-redes-sociales a:hover{
-    border: 2px solid rgb(96, 195, 160)
+    border: 2px solid #7eb7a1;
 }
 
 .iconos-redes-sociales a:hover i{
-    color: rgb(69, 140, 115);
+    color: #7eb7a1;
 }
 
 .derechos-de-autor{
     text-align: center;
     font-size: 15px;
-    color:  rgb(92, 174, 145);
+    color: #7ad0b1;
     padding: 20px;
 }
 
+/*Adaptable o Responsiva*/
 
-/*
-    Media Queries para responsividad
-*/
-@media (max-width:500px) {
-
-    .contenedorEnlaces{
-        background-color: rgb(226, 255, 245);
-        width: 100%;
-        height: 100px;
+@media screen and (max-width:600px){
+    .navbar-brand{
+       display: none; 
     }
-
-    li{
-        margin: 10px;
+    .navbar p{
+        font-size: 1.5rem;
+        margin-left: 25%;
+        font-weight: bold;
     }
-
-    li a{
+    .navbar a{
         margin-left: 0px;
     }
 
-}
-
-@media (max-width:1700px) {
-    .contenedorDescripcion{
-        height: 400px;
+    .aboutHotel{
+        height: 630px;
     }
 
-    .textoDescripcion{
-        font-size: 16px;
-        font-family: 'Roboto', sans-serif;
-        width: 60%;
+    .aboutHotel p{
+        text-align: justify;
+        font-size: 1.2rem;
+    }
+    
+    .aboutHotel img{
+        width: 250px;
+        border-radius: 20%;
+        margin:20px 0px 20px 0px;
+    }
+
+    .footer-texto{
+        font-size: 1.4rem;
+    }
+    .testimonios-imagen{
+        margin-left:32%;
+    }
+    .testimonio-texto{
+        margin-left: 50px;
+        font-size: 1.2rem;
+    }
+    .personaOpinion{
+        font-size: 0.8rem;
+    }
+    .testimonios .fecha{
+        font-size: 0.8rem;
+    }
+    .testimonios .opinionTexto{
         text-align: center;
-    }
-
-    .imagenDescripcion{
-        width: 40%;
-        text-align: center;
-    }
-
-    .imagenDescripcion img{
-        height: 80%;
-    }
-}
-
-
-@media (max-width:1650px) {
-    .contenedorDescripcion{
-        height: 400px;
-    }
-
-    .textoDescripcion{
-        font-size: 16px;
-        font-family: 'Roboto', sans-serif;
-        width: 60%;
-        text-align: center;
-    }
-
-    .imagenDescripcion{
-        width: 40%;
-        text-align: center;
-    }
-
-    .imagenDescripcion img{
-        height: 90%;
     }
 }
 
-@media (max-width:1400px) {
-    .contenedorDescripcion{
-        height: 400px;
-    }
-
-    .textoDescripcion{
-        font-size: 13.5px;
-        font-family: 'Roboto', sans-serif;
-        width: 60%;
-        text-align: center;
-    }
-
-    .imagenDescripcion{
-        width: 40%;
-        text-align: center;
-    }
-
-    .imagenDescripcion img{
-        height: 90%;
+@media screen and (min-width:700px){
+    .hero-inferior-imagen{
+        max-width:600px;
     }
 }
 
-@media (max-width:1060px) {
-    .contenedorDescripcion{
-        height: 400px;
+@media screen and (max-width:800px){
+    .testimonios-imagen{
+        height: 120px;
+        width: 120px;
     }
-
-    .textoDescripcion{
-        font-size: 12px;
-        font-family: 'Roboto', sans-serif;
-        width: 60%;
-        text-align: center;
-    }
-
-    .imagenDescripcion{
-        width: 40%;
-        text-align: center;
-    }
-
-    .imagenDescripcion img{
-        height: 90%;
-    }
-}
-
-@media (max-width:780px) {
-
-    .descripcionContenido{
-        height: 700px;
-    }
-
-    .contenedorDescripcion{
-        height: 530px;
-    }
-
-    .contenedorDescripcion h2{
-        font-size: 30px;
-    }
-
-    .textoDescripcion{
-        font-size: 13.4px;
-        font-family: 'Roboto', sans-serif;
-        width: 90%;
-        text-align: center;
-    }
-
-    .imagenDescripcion{
-        width: 0%;
-    }
-
-    .imagenDescripcion img{
-        display: none;
-    }
-}
-
-@media (max-width:667px) {
-
-    .descripcionContenido{
-        height: 880px;
-    }
-
-    .contenedorDescripcion{
-        height: 670px;
-    }
-
-    .contenedorDescripcion h2{
-        font-size: 23px;
-    }
-
-    .textoDescripcion{
-        font-size: 13.4px;
-        font-family: 'Roboto', sans-serif;
-        width: 90%;
-        text-align: center;
-    }
-
-    .imagenDescripcion{
-        width: 0%;
-    }
-
-    .imagenDescripcion img{
-        display: none;
+    .testimonio-texto{
+        font-size: 15px;
     }
 }

@@ -43,7 +43,7 @@
                 <label for="numeroDoc">Numero de Documento:</label>
                 <input type="text" name="numeroDoc" id="numeroDoc" required>
             </div>
-            <br>            
+            <br>
 
             <div class="campo">
                 <label for="email">Correo Electronico:</label>
@@ -102,7 +102,7 @@
 require_once('Conexion.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
+
     $numeroDocumento_cli1 = $_POST['numeroDoc'];
     $correoElectronico_cli = $_POST['email'];
     $contrasena_cli = $_POST['contrasena'];
@@ -113,32 +113,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $seleccionarUno = Conexion::conexion()->query('SELECT * FROM tb_clientes WHERE numeroDocumento_cli = '. $numeroDocumento_cli1);
 
         $seleccionarUno->setFetchMode(PDO::FETCH_ASSOC);
-    
-        $seleccionarUno->execute();                                
 
-        while($fila = $seleccionarUno->fetch()){    
+        $seleccionarUno->execute();
+
+        while($fila = $seleccionarUno->fetch()){
             $columna1 = $fila['numeroDocumento_cli'];
             $columna2 = $fila['correoElectronico_cli'];
             $columna3 = $fila['contrasena_cli'];
         }
 
         $verificacionContrasena = password_verify($contrasena_cli,$columna3);
-    
+
         if($numeroDocumento_cli1==$columna1 && $correoElectronico_cli == $columna2 && $verificacionContrasena){
             $_SESSION = True;
             echo "<script type='text/javascript'>
                 alert('Bienvenido al Hotel Pegasus');
                 window.location = './paginaPrincipal.php';
-            </script>";    
+            </script>";
         }else{
             echo "<script type='text/javascript'>
-                alert('Alguno de los campos es incorrecto. Intenta nuevamente');        
-            </script>";   
+                alert('Alguno de los campos es incorrecto. Intenta nuevamente');
+            </script>";
         }
     }else{
         echo "<script type='text/javascript'>
                 alert('Las contraseña no coincide, intenta nuevamente...');
-            </script>";          
+            </script>";
     }
 
 }

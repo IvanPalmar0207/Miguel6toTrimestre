@@ -34,8 +34,8 @@ $_SESSION = FALSE;
     <div class="contenedorEnlaces">
         <ul>
             <li><a href="./pages/iniciarSesion.php">Iniciar Sesion</a></li>
-            <li><a href="./pages/registrarCliente.php">Registrar Usuarios</a></li>
-            <li><a href="./pages/mostrarCliente.php">Mostrar Usuarios</a></li>
+            <li><a href="./pages/registrarCliente.php">Registrarse</a></li>
+            <li><a href="./pages/validacionMostrar.php">Administrador</a></li>
         </ul>
     </div>
 
