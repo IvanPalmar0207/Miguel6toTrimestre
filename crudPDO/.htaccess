@@ -3,8 +3,8 @@ Options All -Indexes
 RewriteRule ^([a-zA-Z0-9/ñÑ-]+)$ index.php?views=$1
 
 #Errores de acceso y permisos, 403 y 404
-ErrorDocument 404 /miguel6to-IvanPalmar/crudPDO/error404.php
-ErrorDocument 403 /miguel6to-IvanPalmar/crudPDO/error403.php
+ErrorDocument 404 /Miguel6toTrimestre/crudPDO/error404.php
+ErrorDocument 403 /Miguel6toTrimestre/crudPDO/error403.php
 
 #Cuando el sitio se encuentra en mantenimiento
 #RewriteEngine On
@@ -19,6 +19,11 @@ deny from all
 </files>
 
 <files usuarioClass.php>
+order allow,deny
+deny from all
+</files>
+
+<files tipoHabitacionClass.php>
 order allow,deny
 deny from all
 </files>

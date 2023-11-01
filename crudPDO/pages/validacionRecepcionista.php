@@ -13,7 +13,7 @@
     <!--Icono de la pestaña-->
     <link rel="shortcut icon" href="../img/logoPhp.png" type="image/x-icon">
     <!--Titulo de la Pestaña-->
-    <title>ADMINISTRADOR - PEGASUS</title>
+    <title>RECEPCIONISTA - PEGASUS</title>
 </head>
 <body>
     <!--Encabezado de la pagina-->
@@ -21,7 +21,7 @@
         <div class="logoIzquierdo">
             <img src="../img/playa.png" alt="logoIzquierda">
         </div>
-        <h1 class="tituloEncabezado">Administrador - Hotel Pegasus</h1>
+        <h1 class="tituloEncabezado">Recepcionista - Hotel Pegasus</h1>
         <div class="logoIzquierdo">
             <img src="../img/playa.png" alt="logoIzquierda">
         </div>
@@ -110,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $rol_cli = $_POST['rol'];
     $contrasena_cli = $_POST['contrasena'];
 
-    if($rol_cli == 'Administrador'){
+    if($rol_cli == 'Recepcionista'){
 
         $seleccionarUno = Conexion::conexion()->query('SELECT * FROM tb_clientes WHERE numeroDocumento_cli = '. $numeroDocumento_cli1);
 
@@ -130,8 +130,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if($numeroDocumento_cli1==$columna1 && $correoElectronico_cli == $columna2 && $rol_cli==$columna3 && $verificacionContrasena){
             $_SESSION = True;
             echo "<script type='text/javascript'>
-                alert('Bienvenido señor administrador...');
-                window.location = './mostrarCliente.php';
+                alert('Bienvenido señor Recepcionista...');
+                window.location = './mostrarHabitacion.php';
             </script>";
         }else{
             echo "<script type='text/javascript'>

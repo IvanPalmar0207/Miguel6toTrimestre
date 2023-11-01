@@ -36,13 +36,14 @@ $_SESSION = FALSE;
             <li><a href="./pages/iniciarSesion.php">Iniciar Sesion</a></li>
             <li><a href="./pages/registrarCliente.php">Registrarse</a></li>
             <li><a href="./pages/validacionMostrar.php">Administrador</a></li>
+            <li><a href="./pages/validacionRecepcionista.php">Recepcionista</a></li>
         </ul>
     </div>
 
     <!--Contenido de la pagina-->
     <section class="descripcionContenido">
         <div class="contenedorDescripcion">
-            <h2><i class="bi bi-airplane-engines-fill"></i>BIENVENIDO<i class="bi bi-airplane-engines-fill"></i></h2>
+            <h2><i class="bi bi-airplane-engines-fill"></i>PODRAS DISFRUTAR DE LA MEJOR COMPAÑIA<i class="bi bi-airplane-engines-fill"></i></h2>
             <div class="componentesDescripcion">
                 <div class="textoDescripcion">
                     <p>El Hotel Pegasus es un oasis de elegancia y comodidad que desafía la imaginación. Ubicado en un escenario pintoresco en las faldas

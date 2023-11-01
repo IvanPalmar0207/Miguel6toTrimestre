@@ -60,7 +60,7 @@ class Usuario{
                         <a href="updateCliente.php?numeroDocumento_cli='<?php echo $fila['numeroDocumento_cli']?>'"><img src="../img/actualizar.png" alt="imagenActualizar" width="30px" ></a>
                     </td>
                     <td>
-                        <a href="eliminarCliente.php?numeroDocumento_cli='<?php echo $fila['numeroDocumento_cli'] ?>'"><img src="../img/eliminar.png" alt="imagenEliminar" width='30px'></a>                
+                        <a href="deleteCliente.php?numeroDocumento_cli='<?php echo $fila['numeroDocumento_cli'] ?>'"><img src="../img/eliminar.png" alt="imagenEliminar" width='30px'></a>                
                     </td>
                 </tr>
 
@@ -72,35 +72,11 @@ class Usuario{
 
     public function eliminarCliente($numeroDocumento_cli){
         $sql= 'DELETE FROM tb_clientes WHERE numeroDocumento_cli='. $numeroDocumento_cli;
-        Conexion::conexion()->query($sql)->execute();        
+        Conexion::conexion()->query($sql)->execute();
         echo "<script type='text/javascript'>
                 alert('El usuario ha sido eliminado correctamente...');
                 window.location = './mostrarCliente.php';
-        </script>";    
-    }    
-    public function iniciarSesion(string $numeroDocumento_cli ,string $correoElectronico_cli, string $contrasena_cli){
-
-        $sql = "SELECT * FROM tb_clientes WHERE numeroDocumento_cli = :numeroDocumento AND correoElectronico_cli = :correo AND contrasena_cli = :contrasena";
-
-        $selecionUno = Conexion::conexion()->prepare($sql);
-
-        $selecionUno->bindParam(':numeroDocumento',$numeroDocumento_cli);
-        $selecionUno->bindParam(':correo',$correoElectronico_cli);
-        $selecionUno->bindParam(':contrasena',$contrasena_cli);        
-        $selecionUno->execute();
-
-        $usuarioDB = $selecionUno->fetch(PDO::FETCH_ASSOC);
-
-        if ($usuarioDB) {
-            // Las credenciales son válidas, inicio de sesión exitoso
-            session_start();        
-            // Puedes redirigir a otra página una vez que el inicio de sesión sea exitoso
-            header('Location: index.php');
-            exit;
-        } else {
-            // Credenciales inválidas
-            echo 'Credenciales inválidas. Inténtalo de nuevo.';
-        }
+        </script>";
     }
 
 }

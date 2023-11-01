@@ -4,7 +4,7 @@ require_once('Conexion.php');
 
 class Reserva{
 
-    public function __construct(){    
+    public function __construct(){
     }
 
     public function insertarReserva($numeroDocumento_cli, $fechaLlegada, $fechaSalida, $cantidadJovenes, $cantidadAdultos, $tipoHabitacion){
@@ -16,8 +16,12 @@ class Reserva{
         $hacerReserva->bindParam(1,$numeroDocumento_cli);
         $hacerReserva->bindParam(2,$fechaLlegada);
         $hacerReserva->bindParam(3,$fechaSalida);
-        $hacerReserva->bindParam(4,$fec);
-        $hacerReserva->bindParam(5);
+        $hacerReserva->bindParam(4,$cantidadJovenes);
+        $hacerReserva->bindParam(5,$cantidadAdultos);
+
+        $hacerReserva->execute();
+
+            
 
     }
 

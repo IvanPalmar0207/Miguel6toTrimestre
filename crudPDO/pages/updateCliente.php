@@ -12,7 +12,7 @@ $seleccionarUno->setFetchMode(PDO::FETCH_ASSOC);
 
 $seleccionarUno->execute();
 
-while($fila = $seleccionarUno->fetch()){    
+while($fila = $seleccionarUno->fetch()){
 
     $columna1 = $fila['numeroDocumento_cli'];
     $columna2 = $fila['correoElectronico_cli'];

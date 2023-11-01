@@ -47,7 +47,7 @@ header .logoIzquierdo{
 /*Barra de navegacion*/
 
 .contenedorEnlaces{
-    background-color: #cbffec;
+    background-color: #dafff2;
     width: 100%;
     height: 50px;
     padding-top: 10px;
@@ -87,7 +87,7 @@ li a:hover{
    height: 520px;
    padding: 10px;
    padding-top: 50px;
-   background-color:  #b9ffe5;
+   background-color:  #dafff2;
    color: black;
     max-width: 600px;
     text-align: center;
