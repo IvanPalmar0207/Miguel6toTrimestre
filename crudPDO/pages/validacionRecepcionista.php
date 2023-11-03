@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if($rol_cli == 'Recepcionista'){
 
-        $seleccionarUno = Conexion::conexion()->query('SELECT * FROM tb_clientes WHERE numeroDocumento_cli = '. $numeroDocumento_cli1);
+        $seleccionarUno = Conexion::conexion()->query('SELECT * FROM tb_clientes INNER JOIN tb_rol on tb_rol.codigo_rl = tb_clientes.codigo_rl WHERE tb_clientes.numeroDocumento_cli = '. $numeroDocumento_cli1);
 
         $seleccionarUno->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -121,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         while($fila = $seleccionarUno->fetch()){
             $columna1 = $fila['numeroDocumento_cli'];
             $columna2 = $fila['correoElectronico_cli'];
-            $columna3 = $fila['rol_cli'];
+            $columna3 = $fila['tipo_rl'];
             $columna4 = $fila['contrasena_cli'];
         }
 

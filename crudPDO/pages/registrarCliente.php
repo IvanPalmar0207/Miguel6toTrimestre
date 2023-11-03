@@ -1,3 +1,19 @@
+<?php
+
+require_once('Conexion.php');
+
+$sql = 'SELECT * FROM tb_tipodocumento';
+$selecionarTipoDoc = Conexion::conexion()->prepare($sql);
+$selecionarTipoDoc->setFetchMode(PDO::FETCH_ASSOC);
+$selecionarTipoDoc->execute();
+
+$sql1 = 'SELECT * FROM tb_rol';
+$selecionarRol = Conexion::conexion()->prepare($sql1);
+$selecionarRol->setFetchMode(PDO::FETCH_ASSOC);
+$selecionarRol->execute();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,7 +50,7 @@
             <li><a href="../index.php">Inicio</a></li>
         </ul>
     </div>
-    
+
     <!--Formulario de registro-->
     <section class="formRegistro">
         <form class="container contenedor" method="post" action="#">
@@ -42,17 +58,17 @@
                 <label for="numeroDoc">Numero de Documento:</label>
                 <input type="number" name="numeroDoc" id="numeroDoc" required>
             </div>
-                    
+
             <br>
 
             <div class="campo">
                 <label for="tipoDoc">Tipo de Documento:</label>
                 <select class="input" name="tipoDoc" id="tipoDoc" required>
-                    <option value="vacio"></option>
-                    <option value="CC">Cedula de Ciudadania</option>
-                    <option value="TI">Tarjeta de Identidad</option>
-                    <option value="Permiso">Permiso de estadia</option>
-                    <option value="pasaporte">Pasaporte</option>
+                    <?php
+                    foreach($selecionarTipoDoc->fetchAll() as $columna){
+                        echo "<option value=". $columna ['codigo_tpD']." >". $columna['tipo_tpD'] ."</option>";
+                    }
+                    ?>
                 </select>
             </div>
 
@@ -82,12 +98,11 @@
             <div class="campo">
                 <label for="rol">Rol de usuario:</label>
                 <select class="input" name="rol" id="rol" required>
-                    <option value="vacio"></option>
-                    <option value="Administrador">Administrador</option>
-                    <option value="Cliente">Cliente</option>
-                    <option value="Recepcionista">Recepcionista</option>
-                    <option value="Mesero">Mesero</option>
-                    <option value="Room Service">Room Service</option>
+                    <?php
+                    foreach($selecionarRol->fetchAll() as $rol){
+                        echo "<option value=". $rol['codigo_rl'] .">". $rol['tipo_rl'] ."</option>";
+                    }
+                    ?>
                 </select>
             </div>
 
@@ -125,7 +140,7 @@
                 <i class="bi bi-envelope"></i>
             </a>
         </div>
-        <div class="derechos-de-autor">Creado por: Ivan David Palmar Martinez&#169;</div> 
+        <div class="derechos-de-autor">Creado por: Ivan David Palmar Martinez&#169;</div>
     </footer>
 
 </body>
@@ -143,20 +158,27 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nombres_cli = $_POST['nombre'];
     $apellidos_cli = $_POST['apellido'];
     $rol_cli = $_POST['rol'];
-    $contrasena_cli = $_POST['contrasena'];    
+    $contrasena_cli = $_POST['contrasena'];
+    try{
+        $contrasena_cli = password_hash($contrasena_cli,PASSWORD_DEFAULT,array('password' =>7));
 
-    $contrasena_cli = password_hash($contrasena_cli,PASSWORD_DEFAULT,array('password' =>7));
+        $clientes = new Usuario();
 
-    $clientes = new Usuario();
+        $clientes->insertarDatos($numeroDocumento_cli,$tipoDocumento_cli,$correoElectronico_cli,$nombres_cli,$apellidos_cli,$rol_cli,$contrasena_cli);
 
-    $clientes->insertarDatos($numeroDocumento_cli,$tipoDocumento_cli,$correoElectronico_cli,$nombres_cli,$apellidos_cli,$rol_cli,$contrasena_cli);
+        echo "<script type='text/javascript'>
+                alert('El usuario ha sido registrado correctamente...');
+                window.location = './iniciarSesion.php';
+            </script>";
 
-    echo "<script type='text/javascript'>
-        alert('El usuario ha sido registrado correctamente...');
-        window.location = '../index.php';
+        unset($clientes);
+    }
+    catch(Exception $e){
+        echo "<script type='text/javascript'>
+            alert('No se ha podido registrar el usuario correctamente...');
         </script>";
+    }
 
-    unset($clientes);
 }
 
 ?>

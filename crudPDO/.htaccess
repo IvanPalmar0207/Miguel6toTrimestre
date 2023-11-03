@@ -28,5 +28,10 @@ order allow,deny
 deny from all
 </files>
 
+<files reservarClass.php>
+order allow,deny
+deny from all
+</files>
+
 #Manejo de Bots
 RewriteRule ^.*$ http://fakeroute.com [R,L]

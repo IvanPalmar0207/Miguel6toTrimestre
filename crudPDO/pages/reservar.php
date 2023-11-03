@@ -1,3 +1,16 @@
+<?php
+
+require_once('Conexion.php');
+require_once('reservarClass.php');
+require_once('reservaHabitacionClass.php');
+
+$sql = 'SELECT * FROM tb_tipohabitacion';
+$mostrarHabitacion = Conexion::conexion()->prepare($sql);
+$mostrarHabitacion->setFetchMode(PDO::FETCH_ASSOC);
+$mostrarHabitacion->execute();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,7 +35,7 @@
         <div class="logoIzquierdo">
             <img src="../img/playa.png" alt="logoIzquierda">
         </div>
-        <h1 class="tituloEncabezado">Reservar en el Hotel Pegasus</h1>
+        <h1 class="tituloEncabezado">RESERVAR EN PEGASUS</h1>
         <div class="logoIzquierdo">
             <img src="../img/playa.png" alt="logoIzquierda">
         </div>
@@ -34,7 +47,7 @@
             <li><a href="./paginaPrincipal.php">Inicio</a></li>
         </ul>
         <ul>
-            <li><a href="#">Consultar Mis Reservas</a></li>
+            <li><a href="./validacionReserva.php">Mis Reservas</a></li>
         </ul>
     </div>
 
@@ -43,8 +56,8 @@
         <form class="container contenedor" method="post" action="#">
 
             <div class="campo">
-                <label for="codigoReserva">Codigo de la reserva:</label>
-                <input type="number" name="codigoReserva" id="codigoReserva" required>
+                <label for="codigoRes">Codigo de la reserva:</label>
+                <input type="number" name="codigoRes" id="codigoRes" required>
             </div>
 
             <br>
@@ -78,21 +91,20 @@
             <br>
 
             <div class="campo">
-                <label for="cantidadAdultos">Cantidad de Jovenes:</label>
+                <label for="cantidadAdultos">Cantidad de Adultos:</label>
                 <input type="number" name="cantidadAdultos" id="cantidadAdultos">
             </div>
 
             <br>
 
             <div class="campo">
-                <label for="rol">Tipo de Habitacion:</label>
-                <select class="input" name="rol" id="rol" required>
-                    <option value="0"></option>
-                    <option value="1">Sencilla</option>
-                    <option value="2">Doble</option>
-                    <option value="3">Triple</option>
-                    <option value="4">Matrimonial</option>
-                    <option value="5">Presidencial</option>
+                <label for="tipoHabitacion">Tipo de Habitacion:</label>
+                <select class="input" name="tipoHabitacion" id="tipoHabitacion" required>
+                <?php
+                foreach($mostrarHabitacion->fetchAll() as $columna){
+                    echo "<option value=". $columna['codigo_tpH'] .">".$columna['tipo_tpH'] ." </option>";
+                }
+                ?>
                 </select>
             </div>
 
@@ -123,12 +135,47 @@
                 <i class="bi bi-envelope"></i>
             </a>
         </div>
-        <div class="derechos-de-autor">Creado por: Ivan David Palmar Martinez&#169;</div> 
+        <div class="derechos-de-autor">Creado por: Ivan David Palmar Martinez&#169;</div>
     </footer>
 
 </body>
 </html>
 
 <?php
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $codigoRes = $_POST['codigoRes'];
+    $numeroDocumento_cli = $_POST['numeroDoc'];
+    $fechaLlegada = $_POST['fechaLlegada'];
+    $fechaSalida = $_POST['fechaSalida'];
+    $cantidadJovenes = $_POST['cantidadJovenes'];
+    $cantidadAdultos = $_POST['cantidadAdultos'];
+    $tipoHabitacion = $_POST['tipoHabitacion'];
+
+    try{
+        $reserva = new Reserva;
+        $reserva->insertarReserva($codigoRes,$numeroDocumento_cli,$fechaLlegada,$fechaSalida,$cantidadJovenes,$cantidadAdultos);
+
+        $sql = 'SELECT * FROM tb_reserva WHERE numeroDoc_cli = '. $numeroDocumento_cli;
+        $seleccionarReserva = Conexion::conexion()->prepare($sql);
+        $seleccionarReserva->setFetchMode(PDO::FETCH_ASSOC);
+        $seleccionarReserva->execute();
+
+
+        $reservaHabitacion = new ReservaHabitacion;
+
+        $reservaHabitacion->insertarReservaHabitacion($codigoRes,$tipoHabitacion);
+
+        echo "<script type='text/javascript'>
+            alert('La reserva ha sido agenda, gracias por la confianza');
+            window.location = './paginaPrincipal.php';
+        </script>";
+
+    }catch(Exception $e){
+        echo "<script type='text/javascript'>
+            alert('La reserva ha sido agenda, gracias por la confianza');
+        </script>";
+    }
+}
 
 ?>

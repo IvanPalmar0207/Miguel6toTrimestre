@@ -9,11 +9,11 @@
     <!--CDN de los iconos de BootStrap 5-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!--Estilos de la pagina-->
-    <link rel="stylesheet" href="../css/validacionMostrar.css">
+    <link rel="stylesheet" href="../css/validacionReserva.css">
     <!--Icono de la pestaña-->
     <link rel="shortcut icon" href="../img/logoPhp.png" type="image/x-icon">
     <!--Titulo de la Pestaña-->
-    <title>ADMINISTRADOR - PEGASUS</title>
+    <title>MIS RESERVAS - PEGASUS</title>
 </head>
 <body>
     <!--Encabezado de la pagina-->
@@ -21,7 +21,7 @@
         <div class="logoIzquierdo">
             <img src="../img/playa.png" alt="logoIzquierda">
         </div>
-        <h1 class="tituloEncabezado">Administrador - Hotel Pegasus</h1>
+        <h1 class="tituloEncabezado">MIS RESERVAS</h1>
         <div class="logoIzquierdo">
             <img src="../img/playa.png" alt="logoIzquierda">
         </div>
@@ -30,7 +30,7 @@
     <!--Barra de navegacion-->
     <div class="contenedorEnlaces">
         <ul>
-            <li><a href="../index.php">Volver</a></li>
+            <li><a href="./reservar.php">Volver</a></li>
         </ul>
     </div>
 
@@ -42,25 +42,12 @@
                 <label for="numeroDoc">Numero de Documento:</label>
                 <input type="text" name="numeroDoc" id="numeroDoc" required>
             </div>
+
             <br>
 
             <div class="campo">
                 <label for="email">Correo Electronico:</label>
-                <input type="email" name="email" id="email" required>
-            </div>
-
-            <br>
-
-            <div class="campo">
-                <label for="rol">Rol de usuario:</label>
-                <select class="input" name="rol" id="rol" required>
-                    <option value="vacio"></option>
-                    <option value="Administrador">Administrador</option>
-                    <option value="Cliente">Cliente</option>
-                    <option value="Recepcionista">Recepcionista</option>
-                    <option value="Mesero">Mesero</option>
-                    <option value="Room Service">Room Service</option>
-                </select>
+                <input type="text" name="email" id="email" required>
             </div>
 
             <br>
@@ -102,46 +89,45 @@
 <?php
 
 require_once('Conexion.php');
+require_once('reservarClass.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $numeroDocumento_cli1 = $_POST['numeroDoc'];
+    $numeroDocumento_cli = $_POST['numeroDoc'];
     $correoElectronico_cli = $_POST['email'];
-    $rol_cli = $_POST['rol'];
     $contrasena_cli = $_POST['contrasena'];
 
-    if($rol_cli == 'Administrador'){
+    if(isset($numeroDocumento_cli) && isset($correoElectronico_cli) && isset($contrasena_cli)){
+        $sql = 'SELECT * FROM tb_clientes WHERE numeroDocumento_cli = '. $numeroDocumento_cli;
 
-        $seleccionarUno = Conexion::conexion()->query('SELECT * FROM tb_clientes INNER JOIN tb_rol on tb_rol.codigo_rl = tb_clientes.codigo_rl WHERE tb_clientes.numeroDocumento_cli = '. $numeroDocumento_cli1);
+        $selectionarReserva = Conexion::conexion()->prepare($sql);
+        $selectionarReserva->setFetchMode(PDO::FETCH_ASSOC);
+        $selectionarReserva->execute();
 
-        $seleccionarUno->setFetchMode(PDO::FETCH_ASSOC);
+        $verificacionContrasena = password_verify($contrasena_cli,$columna3);
+        if($numeroDocumento_cli == $columna1 && $correoElectronico_cli == $columna2 && $verificacionContrasena){
 
-        $seleccionarUno->execute();
+            while($fila = $selectionarReserva->fetch()){
+                $columna1 = $fila['numeroDocumento_cli'];
+                $columna2 = $fila['correoElectronico_cli'];
+                $columna3 = $fila['contrasena_cli'];
+            }
 
-        while($fila = $seleccionarUno->fetch()){
-            $columna1 = $fila['numeroDocumento_cli'];
-            $columna2 = $fila['correoElectronico_cli'];
-            $columna3 = $fila['tipo_rl'];
-            $columna4 = $fila['contrasena_cli'];
-        }
-
-        $verificacionContrasena = password_verify($contrasena_cli,$columna4);
-
-        if($numeroDocumento_cli1==$columna1 && $correoElectronico_cli == $columna2 && $rol_cli==$columna3 && $verificacionContrasena){
-            $_SESSION = True;
             echo "<script type='text/javascript'>
-                alert('Bienvenido señor administrador...');
-                window.location = './mostrarCliente.php';
+                alert('Bienvenido a las Reservas del Hotel Pegasus');
+                window.location = './mostrarReserva.php';
             </script>";
         }else{
             echo "<script type='text/javascript'>
-                alert('Alguno de los campos es incorrecto. Intenta nuevamente');
+                alert('Alguno de los datos no coincide, intenta nuevamente');
+                window.location = './reservar.php';
             </script>";
         }
+
     }else{
         echo "<script type='text/javascript'>
-                alert('No tienes permiso para acceder...');
-            </script>";
+            alert('No se han podido reconocer los datos')
+        </script>";
     }
 
 }

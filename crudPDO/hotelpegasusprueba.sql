@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3307
--- Tiempo de generación: 30-10-2023 a las 16:54:41
+-- Tiempo de generación: 03-11-2023 a las 17:25:41
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -29,11 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tb_clientes` (
   `numeroDocumento_cli` varchar(10) NOT NULL,
-  `tipoDocumento_cli` varchar(50) NOT NULL,
+  `codigo_tpD` int(11) NOT NULL,
   `correoElectronico_cli` varchar(200) NOT NULL,
   `nombres_cli` varchar(70) NOT NULL,
   `apellidos_cli` varchar(70) NOT NULL,
-  `rol_cli` varchar(60) NOT NULL,
+  `codigo_rl` int(11) NOT NULL,
   `contrasena_cli` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -41,8 +41,8 @@ CREATE TABLE `tb_clientes` (
 -- Volcado de datos para la tabla `tb_clientes`
 --
 
-INSERT INTO `tb_clientes` (`numeroDocumento_cli`, `tipoDocumento_cli`, `correoElectronico_cli`, `nombres_cli`, `apellidos_cli`, `rol_cli`, `contrasena_cli`) VALUES
-('1030533045', 'CC', 'palmar.ivan0205@gmail.com', 'Iván David', 'Palmar Martinez', 'Administrador', '$2y$10$UOJzh2iKlRkf60m6C0OZbep/IFPBLX6ebfad31zVFiiV8BivwAARG');
+INSERT INTO `tb_clientes` (`numeroDocumento_cli`, `codigo_tpD`, `correoElectronico_cli`, `nombres_cli`, `apellidos_cli`, `codigo_rl`, `contrasena_cli`) VALUES
+('1030533045', 1, 'palmar.ivan0205@gmail.com', 'Ivan David', 'Palmar Martinez', 3, '$2y$10$L0.bgDYOEptklgEtc4orL.pNF7PHsSILU2M6ITgTzQZhM2T6suc1K');
 
 -- --------------------------------------------------------
 
@@ -56,8 +56,64 @@ CREATE TABLE `tb_reserva` (
   `fechaInicio` datetime NOT NULL,
   `fechaSalida` datetime NOT NULL,
   `cantidadJovenes` int(11) NOT NULL,
-  `cantidadAdultos` int(11) NOT NULL
+  `cantidadAultos` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tb_reserva`
+--
+
+INSERT INTO `tb_reserva` (`codigo_res`, `numeroDoc_cli`, `fechaInicio`, `fechaSalida`, `cantidadJovenes`, `cantidadAultos`) VALUES
+(1, '1030533045', '2023-11-09 00:00:00', '2023-11-10 00:00:00', 2, 1),
+(2, '1030533045', '2023-11-09 00:00:00', '2023-11-10 00:00:00', 2, 1),
+(3, '1030533045', '2023-11-11 00:00:00', '2023-11-10 00:00:00', 1, 1),
+(4, '1030533045', '2023-11-09 00:00:00', '2023-11-09 00:00:00', 1, 3),
+(5, '1030533045', '2023-11-03 00:00:00', '2023-11-05 00:00:00', 1, 1),
+(6, '1030533045', '2023-11-03 00:00:00', '2023-11-10 00:00:00', 1, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tb_rol`
+--
+
+CREATE TABLE `tb_rol` (
+  `codigo_rl` int(11) NOT NULL,
+  `tipo_rl` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tb_rol`
+--
+
+INSERT INTO `tb_rol` (`codigo_rl`, `tipo_rl`) VALUES
+(1, 'Administrador'),
+(2, 'Cliente'),
+(3, 'Recepcionista'),
+(4, 'Mesero'),
+(5, 'Room Service');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tb_tipodocumento`
+--
+
+CREATE TABLE `tb_tipodocumento` (
+  `codigo_tpD` int(11) NOT NULL,
+  `tipo_tpD` varchar(60) NOT NULL,
+  `abreviatura_tpD` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tb_tipodocumento`
+--
+
+INSERT INTO `tb_tipodocumento` (`codigo_tpD`, `tipo_tpD`, `abreviatura_tpD`) VALUES
+(1, 'Cedula de ciudadania', 'CC'),
+(2, 'Tarjeta de Identidad', 'TI'),
+(3, 'Permiso de estadia', 'Permiso'),
+(4, 'Pasaporte extranjero', 'Pasaporte');
 
 -- --------------------------------------------------------
 
@@ -69,12 +125,23 @@ CREATE TABLE `tb_tipohabitacion` (
   `codigo_tpH` int(11) NOT NULL,
   `tipo_tpH` varchar(50) NOT NULL,
   `precio_tpH` float NOT NULL,
-  `cantidad_tpH` int(11) NOT NULL,
+  `cantidadDisponible_tpH` int(11) NOT NULL,
   `descripcion_tpH` text NOT NULL,
   `minimoPer_tpH` int(11) NOT NULL,
-  `maximoPer_tph` int(11) NOT NULL,
+  `maximoPer_tpH` int(11) NOT NULL,
   `imagen_tpH` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tb_tipohabitacion`
+--
+
+INSERT INTO `tb_tipohabitacion` (`codigo_tpH`, `tipo_tpH`, `precio_tpH`, `cantidadDisponible_tpH`, `descripcion_tpH`, `minimoPer_tpH`, `maximoPer_tpH`, `imagen_tpH`) VALUES
+(1, 'Doble', 500000, 1, 'Comoda y buena', 1, 2, 0x72656769737472617273652e6a7067),
+(2, 'Sencilla', 250000, 10, 'Demasiado cómoda para una sola persona', 1, 1, 0x73656e63696c6c612e6a7067),
+(3, 'Triple', 650000, 7, 'Comodidad, privacidad y un toque de alegría para ti', 1, 3, 0x747269706c652e6a7067),
+(4, 'Presidencial', 860000, 2, 'Una maravilla para pasar tus mejores vacaciones', 2, 6, 0x707265736964656e6369616c2e6a7067),
+(5, 'Matrimonial', 1000000, 4, 'Pasa la mejor luna de miel con tu pareja', 2, 2, 0x6d617472696d6f6e69616c2e6a7067);
 
 -- --------------------------------------------------------
 
@@ -88,6 +155,13 @@ CREATE TABLE `tb_tipohabitacion_tb_reserva` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `tb_tipohabitacion_tb_reserva`
+--
+
+INSERT INTO `tb_tipohabitacion_tb_reserva` (`codigo_tpH`, `codigo_res`) VALUES
+(1, 6);
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -95,7 +169,9 @@ CREATE TABLE `tb_tipohabitacion_tb_reserva` (
 -- Indices de la tabla `tb_clientes`
 --
 ALTER TABLE `tb_clientes`
-  ADD PRIMARY KEY (`numeroDocumento_cli`);
+  ADD PRIMARY KEY (`numeroDocumento_cli`),
+  ADD KEY `FK1_tbclientes_tbRol` (`codigo_rl`),
+  ADD KEY `FK1_tbclientes_tbTipoDocumento` (`codigo_tpD`);
 
 --
 -- Indices de la tabla `tb_reserva`
@@ -103,6 +179,18 @@ ALTER TABLE `tb_clientes`
 ALTER TABLE `tb_reserva`
   ADD PRIMARY KEY (`codigo_res`),
   ADD KEY `FK1_tbReservar_tbCliente` (`numeroDoc_cli`);
+
+--
+-- Indices de la tabla `tb_rol`
+--
+ALTER TABLE `tb_rol`
+  ADD PRIMARY KEY (`codigo_rl`);
+
+--
+-- Indices de la tabla `tb_tipodocumento`
+--
+ALTER TABLE `tb_tipodocumento`
+  ADD PRIMARY KEY (`codigo_tpD`);
 
 --
 -- Indices de la tabla `tb_tipohabitacion`
@@ -125,17 +213,36 @@ ALTER TABLE `tb_tipohabitacion_tb_reserva`
 -- AUTO_INCREMENT de la tabla `tb_reserva`
 --
 ALTER TABLE `tb_reserva`
-  MODIFY `codigo_res` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigo_res` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `tb_rol`
+--
+ALTER TABLE `tb_rol`
+  MODIFY `codigo_rl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `tb_tipodocumento`
+--
+ALTER TABLE `tb_tipodocumento`
+  MODIFY `codigo_tpD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_tipohabitacion`
 --
 ALTER TABLE `tb_tipohabitacion`
-  MODIFY `codigo_tpH` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigo_tpH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `tb_clientes`
+--
+ALTER TABLE `tb_clientes`
+  ADD CONSTRAINT `FK1_tbclientes_tbRol` FOREIGN KEY (`codigo_rl`) REFERENCES `tb_rol` (`codigo_rl`),
+  ADD CONSTRAINT `FK1_tbclientes_tbTipoDocumento` FOREIGN KEY (`codigo_tpD`) REFERENCES `tb_tipodocumento` (`codigo_tpD`);
 
 --
 -- Filtros para la tabla `tb_reserva`

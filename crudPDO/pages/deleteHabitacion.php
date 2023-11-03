@@ -1,3 +1,6 @@
+<link rel="shortcut icon" href="../img/logoPhp.png" type="image/x-icon">
+<title>Eliminar Habitacion</title>
+
 <?php
 
 require_once('tipoHabitacionClass.php');
