@@ -244,21 +244,21 @@ ALTER TABLE `tb_tipohabitacion`
 -- Filtros para la tabla `tb_clientes`
 --
 ALTER TABLE `tb_clientes`
-  ADD CONSTRAINT `FK1_tbclientes_tbRol` FOREIGN KEY (`codigo_rl`) REFERENCES `tb_rol` (`codigo_rl`),
-  ADD CONSTRAINT `FK1_tbclientes_tbTipoDocumento` FOREIGN KEY (`codigo_tpD`) REFERENCES `tb_tipodocumento` (`codigo_tpD`);
+  ADD CONSTRAINT `FK1_tbclientes_tbRol` FOREIGN KEY (`codigo_rl`) REFERENCES `tb_rol` (`codigo_rl`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK1_tbclientes_tbTipoDocumento` FOREIGN KEY (`codigo_tpD`) REFERENCES `tb_tipodocumento` (`codigo_tpD`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `tb_reserva`
 --
 ALTER TABLE `tb_reserva`
-  ADD CONSTRAINT `FK1_tbReservar_tbCliente` FOREIGN KEY (`numeroDoc_cli`) REFERENCES `tb_clientes` (`numeroDocumento_cli`);
+  ADD CONSTRAINT `FK1_tbReservar_tbCliente` FOREIGN KEY (`numeroDoc_cli`) REFERENCES `tb_clientes` (`numeroDocumento_cli`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `tb_tipohabitacion_tb_reserva`
 --
 ALTER TABLE `tb_tipohabitacion_tb_reserva`
-  ADD CONSTRAINT `FK2_tb_TipoHabitacion_tb_Reserva` FOREIGN KEY (`codigo_tpH`) REFERENCES `tb_tipohabitacion` (`codigo_tpH`),
-  ADD CONSTRAINT `FK3_tb_Reserva_tb_TipoHabitacion` FOREIGN KEY (`codigo_res`) REFERENCES `tb_reserva` (`codigo_res`);
+  ADD CONSTRAINT `FK2_tb_TipoHabitacion_tb_Reserva` FOREIGN KEY (`codigo_tpH`) REFERENCES `tb_tipohabitacion` (`codigo_tpH`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK3_tb_Reserva_tb_TipoHabitacion` FOREIGN KEY (`codigo_res`) REFERENCES `tb_reserva` (`codigo_res`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

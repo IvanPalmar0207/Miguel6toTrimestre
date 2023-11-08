@@ -61,7 +61,7 @@ class Reserva{
                         <a href="updateReserva.php?codigo_res='<?php echo $fila['codigo_res']?>'"><img src="../img/actualizar.png" alt="imagenActualizar" width="30px" ></a>
                     </td>
                     <td>
-                        <a href="deleteReserva.php?codigo_res='<?php echo $fila['codigo_res'] ?>'"><img src="../img/eliminar.png" alt="imagenEliminar" width='30px'></a>                
+                        <a href="updateReserva.php?codigo_res='<?php echo $fila['codigo_res'] ?>'"><img src="../img/eliminar.png" alt="imagenEliminar" width='30px'></a>                
                     </td>
                 </tr>
 
@@ -75,8 +75,8 @@ class Reserva{
         $sql= 'DELETE FROM tb_reserva WHERE codigo_res='. $codigo_res;
         Conexion::conexion()->query($sql)->execute();
         echo "<script type='text/javascript'>
-                alert('El usuario ha sido eliminado correctamente...');
-                window.location = './mostrarCliente.php';
+                alert('Has cancelado la reserva correctamente...');
+                window.location = './reservar.php';
         </script>";
     }
 
