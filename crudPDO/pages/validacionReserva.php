@@ -59,6 +59,13 @@
 
             <br>
 
+            <div class="campo">
+                <label for="contrasena">Confirmar Contraseña:</label>
+                <input type="password" name="contrasenaConfirmar" id="contrasenaContrasena" required>
+            </div>
+
+            <br>
+
             <input class="boton" type="submit" value="Acceder">
         </form>
     </section>
@@ -96,26 +103,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $numeroDocumento_cli = $_POST['numeroDoc'];
     $correoElectronico_cli = $_POST['email'];
     $contrasena_cli = $_POST['contrasena'];
+    $confirmarContrasena = $_POST['contrasenaConfirmar'];
 
-    if(isset($numeroDocumento_cli) && isset($correoElectronico_cli) && isset($contrasena_cli)){
-        $sql = 'SELECT * FROM tb_clientes WHERE numeroDocumento_cli = '. $numeroDocumento_cli;
+    if($contrasena_cli == $confirmarContrasena){
+        $sql = 'SELECT * FROM tb_reserva INNER JOIN tb_clientes ON tb_reserva.numeroDoc_cli = tb_clientes.numeroDocumento_cli WHERE numeroDocumento_cli = '. $numeroDocumento_cli;
 
         $selectionarReserva = Conexion::conexion()->prepare($sql);
         $selectionarReserva->setFetchMode(PDO::FETCH_ASSOC);
         $selectionarReserva->execute();
 
+        while($fila = $selectionarReserva->fetch()){
+            $columna1 = $fila['numeroDocumento_cli'];
+            $columna2 = $fila['correoElectronico_cli'];
+            $columna3 = $fila['contrasena_cli'];
+        }
+
         $verificacionContrasena = password_verify($contrasena_cli,$columna3);
         if($numeroDocumento_cli == $columna1 && $correoElectronico_cli == $columna2 && $verificacionContrasena){
-
-            while($fila = $selectionarReserva->fetch()){
-                $columna1 = $fila['numeroDocumento_cli'];
-                $columna2 = $fila['correoElectronico_cli'];
-                $columna3 = $fila['contrasena_cli'];
-            }
-
             echo "<script type='text/javascript'>
                 alert('Bienvenido a las Reservas del Hotel Pegasus');
-                window.location = './mostrarReserva.php';
+                window.location = './mostrarReserva.php?numeroDocumento_cli=$columna1';
             </script>";
         }else{
             echo "<script type='text/javascript'>
@@ -129,6 +136,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             alert('No se han podido reconocer los datos')
         </script>";
     }
-
 }
 ?>

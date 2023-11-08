@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3307
--- Tiempo de generación: 03-11-2023 a las 17:25:41
+-- Tiempo de generación: 08-11-2023 a las 15:28:08
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -53,8 +53,8 @@ INSERT INTO `tb_clientes` (`numeroDocumento_cli`, `codigo_tpD`, `correoElectroni
 CREATE TABLE `tb_reserva` (
   `codigo_res` int(11) NOT NULL,
   `numeroDoc_cli` varchar(10) NOT NULL,
-  `fechaInicio` datetime NOT NULL,
-  `fechaSalida` datetime NOT NULL,
+  `fechaInicio` date NOT NULL,
+  `fechaSalida` date NOT NULL,
   `cantidadJovenes` int(11) NOT NULL,
   `cantidadAultos` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -64,12 +64,14 @@ CREATE TABLE `tb_reserva` (
 --
 
 INSERT INTO `tb_reserva` (`codigo_res`, `numeroDoc_cli`, `fechaInicio`, `fechaSalida`, `cantidadJovenes`, `cantidadAultos`) VALUES
-(1, '1030533045', '2023-11-09 00:00:00', '2023-11-10 00:00:00', 2, 1),
-(2, '1030533045', '2023-11-09 00:00:00', '2023-11-10 00:00:00', 2, 1),
-(3, '1030533045', '2023-11-11 00:00:00', '2023-11-10 00:00:00', 1, 1),
-(4, '1030533045', '2023-11-09 00:00:00', '2023-11-09 00:00:00', 1, 3),
-(5, '1030533045', '2023-11-03 00:00:00', '2023-11-05 00:00:00', 1, 1),
-(6, '1030533045', '2023-11-03 00:00:00', '2023-11-10 00:00:00', 1, 2);
+(1, '1030533045', '2023-11-09', '2023-11-10', 2, 1),
+(2, '1030533045', '2023-11-09', '2023-11-10', 2, 1),
+(3, '1030533045', '2023-11-11', '2023-11-10', 1, 1),
+(4, '1030533045', '2023-11-09', '2023-11-09', 1, 3),
+(5, '1030533045', '2023-11-03', '2023-11-05', 1, 1),
+(6, '1030533045', '2023-11-03', '2023-11-10', 1, 2),
+(7, '1030533045', '2023-11-08', '2023-11-09', 2, 0),
+(8, '1030533045', '2023-11-10', '2023-11-09', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -159,7 +161,8 @@ CREATE TABLE `tb_tipohabitacion_tb_reserva` (
 --
 
 INSERT INTO `tb_tipohabitacion_tb_reserva` (`codigo_tpH`, `codigo_res`) VALUES
-(1, 6);
+(1, 6),
+(3, 7);
 
 --
 -- Índices para tablas volcadas
@@ -213,7 +216,7 @@ ALTER TABLE `tb_tipohabitacion_tb_reserva`
 -- AUTO_INCREMENT de la tabla `tb_reserva`
 --
 ALTER TABLE `tb_reserva`
-  MODIFY `codigo_res` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `codigo_res` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_rol`
