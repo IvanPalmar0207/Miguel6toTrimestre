@@ -6,7 +6,7 @@ require_once('usuarioClass.php');
 $numeroDocumento_cli1 = $_GET['numeroDocumento_cli'];
 
 
-$seleccionarUno = Conexion::conexion()->query('SELECT * FROM tb_clientes WHERE numeroDocumento_cli ='. $numeroDocumento_cli1);
+$seleccionarUno = Conexion::conexion()->query('SELECT * FROM tb_clientes INNER JOIN tb_rol ON tb_clientes.codigo_rl = tb_rol.codigo_rl WHERE numeroDocumento_cli ='. $numeroDocumento_cli1);
 
 $seleccionarUno->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -18,7 +18,7 @@ while($fila = $seleccionarUno->fetch()){
     $columna2 = $fila['correoElectronico_cli'];
     $columna3 = $fila['nombres_cli'];
     $columna4 = $fila['apellidos_cli'];
-    $columna5 = $fila['rol_cli'];
+    $columna5 = $fila['tipo_rl'];
     $columna6 = $fila['contrasena_cli'];
 }
 ?>

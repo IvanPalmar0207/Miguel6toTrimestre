@@ -145,20 +145,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $cantidadJovenes = $_POST['cantidadJovenes'];
     $cantidadAdultos = $_POST['cantidadAdultos'];
 
-    $sql = 'UPDATE tb_reserva SET fechaInicio = :fechaInicio, fechaSalida = :fechaSalida, cantidadJovenes = :cantidadJovenes, cantidadAultos :cantidadAdultos WHERE codigo_res = "'.$columna1.'"';
+    $sql = 'UPDATE tb_reserva SET fechaInicio = ?, fechaSalida = ?, cantidadJovenes = ?, cantidadAultos = ? WHERE codigo_res = ?';
 
     $resultado = Conexion::conexion()->prepare($sql);
 
-    $resultado->bindParam(':fechaInicio',$fechaInicio);
-    $resultado->bindParam(':fechaSalida',$fechaSalida);
-    $resultado->bindParam(':cantidadJovenes',$cantidadJovenes);
-    $resultado->bindParam(':cantidadAdultos',$cantidadAdultos);
+    $resultado->bindParam(1,$fechaInicio);
+    $resultado->bindParam(2,$fechaSalida);
+    $resultado->bindParam(3,$cantidadJovenes);
+    $resultado->bindParam(4,$cantidadAdultos);
+    $resultado->bindParam(5,$columna1,PDO::PARAM_INT);
 
     $resultado->execute();
 
     echo "<script type='text/javascript'>
         alert('La reserva ha sido actualizada correctamente...');
-        window.location = 'mostrarReserva.php';
+        window.location = 'reservar.php';
     </script>";
 
 }

@@ -61,7 +61,7 @@ class Reserva{
                         <a href="updateReserva.php?codigo_res='<?php echo $fila['codigo_res']?>'"><img src="../img/actualizar.png" alt="imagenActualizar" width="30px" ></a>
                     </td>
                     <td>
-                        <a href="updateReserva.php?codigo_res='<?php echo $fila['codigo_res'] ?>'"><img src="../img/eliminar.png" alt="imagenEliminar" width='30px'></a>                
+                        <a href="deleteReserva.php?codigo_res='<?php echo $fila['codigo_res'] ?>'"><img src="../img/eliminar.png" alt="imagenEliminar" width='30px'></a>                
                     </td>
                 </tr>
 
