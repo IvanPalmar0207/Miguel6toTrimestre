@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="925dp"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="Reserva con Pegasus"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="45dp"></TextView>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"
+            android:drawableStart="@drawable/baseline_qr_code_24"
+            android:drawableTint="@color/green"
+            android:duplicateParentState="false"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Codigo de la Reserva"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"></EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"
+            android:drawableStart="@drawable/baseline_numbers_24"
+            android:drawableTint="@color/green"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Numero de Documento"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"></EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"
+            android:drawableStart="@drawable/baseline_calendar_today_24"
+            android:drawableTint="@color/green"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Fecha de inicio"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"></EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"
+            android:drawableStart="@drawable/baseline_calendar_month_24"
+            android:drawableTint="@color/green"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Fecha de Salida"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"></EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="20dp"
+            android:drawableStart="@drawable/baseline_menu_book_24"
+            android:drawableTint="@color/green"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Cantidad de jovenes"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"></EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="40dp"
+            android:drawableStart="@drawable/baseline_moving_24"
+            android:drawableTint="@color/green"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Cantidad de adultos"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"></EditText>
+
+        <EditText
+            android:id="@+id/confirmarContraseña"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"
+            android:drawableStart="@drawable/baseline_password_24"
+            android:drawableTint="@color/green"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:hint="Confirmar Contraseña"
+            android:textColorHint="@color/black"
+            android:textAlignment="center"></EditText>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="50dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnVolverGestionReservar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="25dp"
+            android:backgroundTint="@color/green"
+            android:fontFamily="@font/roboto_black"
+            android:text="Reservar"
+            android:textSize="25dp"></Button>
+
+        <TextView
+            android:id="@+id/btnVolverGestionUsu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25px"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Gestion de Reservas"
+            android:textAlignment="center"></TextView>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
