@@ -56,7 +56,7 @@ class eliminarUsuarios : AppCompatActivity() {
     }
 
     private fun eliminarUsu(){
-        var url = "https://proyectofinalyd.000webhostapp.com/MiguelAndroid/usuarios/eliminarUsuarios.php"
+        val url = "https://proyectofinalyd.000webhostapp.com/MiguelAndroid/usuarios/eliminarUsuarios.php"
         var queue= Volley.newRequestQueue(this);
         var resultadoResquest = object : StringRequest(
             Request.Method.POST,url,
@@ -71,7 +71,7 @@ class eliminarUsuarios : AppCompatActivity() {
                 val parametros = HashMap<String, String>()
                 parametros.put("numeroDocumento_usu", cajaNumeroDocumentoEliminarUSU?.text.toString());
                 parametros.put("correoElectronico_usu", cajaCorreoElectronicoEliminarUSU?.text.toString());
-                parametros.put("numeroDocumento_usu", cajaContrasenaEliminarUSU?.text.toString());
+                parametros.put("contrasena_usu", cajaContrasenaEliminarUSU?.text.toString());
                 return parametros;
             }
         }

@@ -13,6 +13,7 @@ class GestionUsuarios : AppCompatActivity() {
         val btnSalirUsuarios = findViewById<Button>(R.id.btnSalirUsuarios)
         val btnInsertarUsuarios = findViewById<Button>(R.id.btnInsertarUsuarios)
         val btnEliminarGU = findViewById<Button>(R.id.btnEliminarGU)
+        val btnActualizarGU = findViewById<Button>(R.id.btnActualizarGU)
 
         btnSalirUsuarios.setOnClickListener{
             val intent = Intent(applicationContext,menuPrincipal::class.java)
@@ -26,6 +27,11 @@ class GestionUsuarios : AppCompatActivity() {
 
         btnEliminarGU.setOnClickListener{
             val intent = Intent(applicationContext,eliminarUsuarios::class.java)
+            startActivity(intent)
+        }
+
+        btnActualizarGU.setOnClickListener {
+            val intent = Intent(applicationContext,solicitarActualizar::class.java)
             startActivity(intent)
         }
 
