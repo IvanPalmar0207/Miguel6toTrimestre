@@ -6,4 +6,118 @@
     android:layout_height="match_parent"
     tools:context=".gestionMobiliario">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".gestionTipoHabitacion">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="925dp"
+            android:backgroundTint="#FFFFFF"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
+                android:fontFamily="@font/roboto_black"
+                android:text="Mobiliario"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textSize="45dp"></TextView>
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="50dp"
+                app:srcCompat="@drawable/lugar_de_trabajo"
+                tools:layout_editor_absoluteX="35dp"
+                tools:layout_editor_absoluteY="79dp"></ImageView>
+
+            <Button
+                android:id="@+id/btnInsertarMobiliario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="24dp"
+                android:backgroundTint="@color/green"
+                android:drawableEnd="@drawable/baseline_how_to_reg_24"
+                android:drawableTint="@color/white"
+                android:fontFamily="@font/roboto_black"
+                android:text="Insercion de Mobiliario"
+                android:textSize="23dp"></Button>
+
+            <Button
+                android:id="@+id/btnSeleccionarTpHab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="24dp"
+                android:backgroundTint="@color/green"
+                android:drawableEnd="@drawable/baseline_update_24"
+                android:drawableTint="@color/white"
+                android:fontFamily="@font/roboto_black"
+                android:text="Seleccion de Mobiliario"
+                android:textSize="23dp"></Button>
+
+            <Button
+                android:id="@+id/btnEliminarMobiliario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="24dp"
+                android:backgroundTint="@color/colorRojo"
+                android:drawableEnd="@drawable/baseline_auto_delete_24"
+                android:drawableTint="@color/white"
+                android:fontFamily="@font/roboto_black"
+                android:text="Eliminacion de Mobiliario"
+                android:textSize="23dp"></Button>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="137dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="50dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/btnVolverMobiliarioGS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="25dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="20dp"
+                android:text="Menu Principal"
+                android:textAlignment="center"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

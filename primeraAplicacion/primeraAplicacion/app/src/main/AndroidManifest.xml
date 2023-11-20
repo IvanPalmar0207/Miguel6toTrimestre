@@ -16,6 +16,33 @@
         android:theme="@style/Theme.PrimeraAplicacion"
         tools:targetApi="31">
         <activity
+            android:name=".eliminarMobiliario"
+            android:exported="false" />
+        <activity
+            android:name=".insertarMobiliario"
+            android:exported="false" />
+        <activity
+            android:name=".gestionMobiliario"
+            android:exported="false" />
+        <activity
+            android:name=".actualizarTipoHabitacion"
+            android:exported="false" />
+        <activity
+            android:name=".seleccionarTipoHabitacion"
+            android:exported="false" />
+        <activity
+            android:name=".eliminarTipoHabitacion"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".insercionTipoHabitacion"
+            android:exported="false" />
+        <activity
+            android:name=".gestionTipoHabitacion"
+            android:exported="false" />
+        <activity
             android:name=".actualizarUsuario"
             android:exported="false" />
         <activity

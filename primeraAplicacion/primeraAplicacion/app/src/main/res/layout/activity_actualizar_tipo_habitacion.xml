@@ -6,4 +6,131 @@
     android:layout_height="match_parent"
     tools:context=".actualizarTipoHabitacion">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="925dp"
+            android:backgroundTint="#FFFFFF"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="25dp"
+                android:fontFamily="@font/roboto_black"
+                android:text="Actualizar Tp.Habitacion"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textSize="45dp"></TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="100dp"
+                android:textSize="24dp"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/roboto_mediumitalic"
+                android:text="Cogido del Tipo de habitacion:">
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/textoCodigoTipoHabitacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="30dp"
+                android:textSize="24dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_mediumitalic"
+                android:text="">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="70dp"
+                android:textSize="24dp"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/roboto_mediumitalic"
+                android:text="Tipo de la habitacion:">
+            </TextView>
+
+            <EditText
+                android:id="@+id/cajaActualizarTipoHab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="40dp"
+                android:drawableStart="@drawable/baseline_supervised_user_circle_24"
+                android:drawableTint="@color/green"
+                android:fontFamily="@font/roboto_medium"
+                android:inputType="text"
+                android:padding="15dp"
+                android:textSize="24dp"
+                android:textAlignment="center"
+                ></EditText>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="137dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="50dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnActualizarTipoHab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="25dp"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/roboto_black"
+                android:text="Actualizar"
+                android:textSize="25dp"></Button>
+
+            <TextView
+                android:id="@+id/btnVolverActualizarTpHab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25px"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Regresar"
+                android:textAlignment="center"
+                android:textSize="18dp"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

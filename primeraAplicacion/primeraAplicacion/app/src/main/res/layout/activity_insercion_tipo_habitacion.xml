@@ -1,9 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".insercionTipoHabitacion">
+    tools:context=".MainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="Insercion de Tp.Habitacion"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="40dp"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="70dp"
+            android:textSize="22dp"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/roboto_mediumitalic"
+            android:text="Codigo del Tipo de Habitacion:">
+        </TextView>
+
+        <EditText
+            android:id="@+id/cajaCodigoTipoHabIN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:drawableStart="@drawable/baseline_mark_email_read_24"
+            android:drawableTint="@color/green"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textAlignment="center"></EditText>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="60dp"
+            android:textSize="22dp"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/roboto_mediumitalic"
+            android:text="¿Cual es el tipo de habitacion?">
+        </TextView>
+
+        <EditText
+            android:id="@+id/cajaTipoHabIN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:drawableStart="@drawable/baseline_password_24"
+            android:drawableTint="@color/green"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textAlignment="center"></EditText>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnAgregarTipoHab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/green"
+            android:fontFamily="@font/roboto_black"
+            android:text="Agregar Tp. Habitacion"
+            android:textSize="22dp"></Button>
+
+        <TextView
+            android:id="@+id/btnVolverTipoGestionIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25px"
+            android:layout_marginBottom="60dp"
+            android:text="Gestion de Tp. Habitacion"
+            android:textAlignment="center"
+            android:fontFamily="@font/roboto_medium"
+            ></TextView>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -20,7 +20,6 @@ class actualizarUsuario : AppCompatActivity() {
     var cajaActualizarApellidos_usu:EditText?=null
     var cajaActualizarCodigotpd:EditText?=null
     var cajaActualizaCorreoElectronico_usu:EditText?=null
-    var cajaActualizarContrasena_usu:EditText?=null
     var cajaActualizarCodigorl:EditText?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +29,6 @@ class actualizarUsuario : AppCompatActivity() {
         cajaActualizarApellidos_usu = findViewById(R.id.cajaActualizarApellidos_usu)
         cajaActualizarCodigotpd = findViewById(R.id.cajaActualizarCodigotpd)
         cajaActualizaCorreoElectronico_usu = findViewById(R.id.cajaActualizaCorreoElectronico_usu)
-        cajaActualizarContrasena_usu = findViewById(R.id.cajaActualizarContrasena_usu)
         cajaActualizarCodigorl = findViewById(R.id.cajaActualizarCodigorl)
         val btnActualizarDatosUSU = findViewById<Button>(R.id.btnActualizarDatosUSU)
         val btnVolverActualizarUSU = findViewById<TextView>(R.id.btnVolverActualizarUSU)
@@ -46,7 +44,6 @@ class actualizarUsuario : AppCompatActivity() {
                 cajaActualizarApellidos_usu?.setText(response.getString("apellidos_usu"))
                 cajaActualizarCodigotpd?.setText(response.getString("codigo_tpD"))
                 cajaActualizaCorreoElectronico_usu?.setText(response.getString("correoElectronico_usu"))
-                cajaActualizarContrasena_usu?.setText(response.getString("contrasena_usu"))
                 cajaActualizarCodigorl?.setText(response.getString("codigo_rl"))
 
             }, { error ->
@@ -85,7 +82,6 @@ class actualizarUsuario : AppCompatActivity() {
                 parametros.put("nombres_usu", cajaActualizarNombre_usu?.text.toString());
                 parametros.put("apellidos_usu", cajaActualizarApellidos_usu?.text.toString());
                 parametros.put("correoElectronico_usu",cajaActualizaCorreoElectronico_usu?.text.toString());
-                parametros.put("contrasena_usu",cajaActualizarContrasena_usu?.text.toString());
                 parametros.put("codigo_rl",cajaActualizarCodigorl?.text.toString());
                 parametros.put("codigo_tpD",cajaActualizarCodigotpd?.text.toString())
                 return parametros;

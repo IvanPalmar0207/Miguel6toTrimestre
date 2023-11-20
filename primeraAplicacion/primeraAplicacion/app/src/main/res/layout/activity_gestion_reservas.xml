@@ -83,7 +83,7 @@
             android:layout_marginTop="1dp"
             android:layout_marginRight="25dp"
             android:layout_marginBottom="30dp"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/colorRojo"
             android:fontFamily="@font/roboto_black"
             android:text="Eliminacion de Reservas"
             android:textSize="22dp"

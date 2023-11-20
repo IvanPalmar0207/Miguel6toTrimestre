@@ -5,4 +5,182 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".homePageEmpleado"/>
+    tools:context=".gestionHabitacion">
+
+    <TextView
+        android:id="@+id/textView76"
+        android:layout_width="275dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="12dp"
+        android:text="Como empleado podras, eliminar, actualizar y agregar tanto habitaciones, como el inmobiliriao que los clientes encontraran en su estadia."
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
+        android:textColorLink="#000000"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView28" />
+
+    <ImageView
+        android:id="@+id/imageView29"
+        android:layout_width="135dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView77"
+        app:srcCompat="@drawable/gestionizquierda" />
+
+    <ImageView
+        android:id="@+id/imageView28"
+        android:layout_width="149dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView77"
+        app:srcCompat="@drawable/gestioncentro" />
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="146dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView77"
+        app:srcCompat="@drawable/gestionderecha" />
+
+    <Button
+        android:id="@+id/btnMobiliario"
+        android:layout_width="160dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/green"
+        android:text="Mobiliario"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
+        android:textColorLink="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTipoHabitacion" />
+
+    <Button
+        android:id="@+id/btnHabitacion"
+        android:layout_width="158dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/green"
+        android:text="Habitacion"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
+        android:textColorLink="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView76" />
+
+    <Button
+        android:id="@+id/btnTipoHabitacion"
+        android:layout_width="179dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/green"
+        android:text="Tp.Habitacion"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
+        android:textColorLink="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView76" />
+
+    <TextView
+        android:id="@+id/textView77"
+        android:layout_width="346dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:text="Gestion de Habitaciones"
+        android:fontFamily="@font/roboto_medium"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
+        android:textColorLink="#000000"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.733"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView75" />
+
+    <TextView
+        android:id="@+id/textView75"
+        android:layout_width="276dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="12dp"
+        android:text="Bienvenido señor empleado, te encuentras en la seccion de habitaciones."
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
+        android:textColorLink="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+    <Button
+        android:id="@+id/btnVolverGHab"
+        android:layout_width="67dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#FFFFFF"
+        app:icon="@drawable/baseline_house_24"
+        app:iconGravity="textTop"
+        app:iconSize="60sp"
+        app:iconTint="@color/green"
+        app:layout_constraintStart_toEndOf="@+id/textView74"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView74"
+        android:layout_width="252dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="HOTEL PEGASUS"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textColorHighlight="@color/green"
+        android:textColorHint="@color/green"
+        android:textColorLink="@color/green"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

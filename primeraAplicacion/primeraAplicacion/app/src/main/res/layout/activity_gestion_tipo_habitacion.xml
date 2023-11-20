@@ -1,9 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".gestionTipoHabitacion">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="925dp"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="Tipos de Habitacion"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="45dp"></TextView>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="50dp"
+            app:srcCompat="@drawable/tipohabitacion"
+            tools:layout_editor_absoluteX="35dp"
+            tools:layout_editor_absoluteY="79dp"></ImageView>
+
+        <Button
+            android:id="@+id/btnInsertarTipoHabitacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="25dp"
+            android:backgroundTint="@color/green"
+            android:drawableEnd="@drawable/baseline_how_to_reg_24"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/roboto_black"
+            android:text="Insercion Tp. Habitacion"
+            android:textSize="23dp"></Button>
+
+        <Button
+            android:id="@+id/btnSeleccionarTpHab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/green"
+            android:drawableEnd="@drawable/baseline_update_24"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/roboto_black"
+            android:text="Seleccion Tp. Habitacion"
+            android:textSize="23dp"></Button>
+
+        <Button
+            android:id="@+id/btnEliminarTipoHabGES"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
+            android:backgroundTint="@color/colorRojo"
+            android:drawableEnd="@drawable/baseline_auto_delete_24"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/roboto_black"
+            android:text="Eliminacion Tp. Habitacion"
+            android:textSize="23dp"></Button>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="50dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/btnVolverTiposHabitacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25px"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Gestion de Habitaciones"
+            android:textAlignment="center"></TextView>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
