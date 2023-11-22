@@ -16,6 +16,7 @@ class insercionTipoHabitacion : AppCompatActivity() {
 
     var cajaCodigoTipoHabIN:EditText?=null
     var cajaTipoHabIN:EditText?=null
+    var cajaPrecioTipoHabIN:EditText?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insercion_tipo_habitacion)
@@ -25,12 +26,14 @@ class insercionTipoHabitacion : AppCompatActivity() {
 
         cajaCodigoTipoHabIN = findViewById(R.id.cajaCodigoTipoHabIN)
         cajaTipoHabIN = findViewById(R.id.cajaTipoHabIN)
+        cajaPrecioTipoHabIN = findViewById(R.id.cajaPrecioTipoHabIN)
 
         btnAgregarTipoHab.setOnClickListener {
             val codigo_tpH = cajaCodigoTipoHabIN?.text.toString()
             val tipo_tpH = cajaTipoHabIN?.text.toString()
+            val precio_tpH = cajaPrecioTipoHabIN?.text.toString()
 
-            if(codigo_tpH.equals("") || tipo_tpH.equals("")){
+            if(codigo_tpH.equals("") || tipo_tpH.equals("") || precio_tpH.equals("")){
                 Toast.makeText(applicationContext,"Debes llenar todos los campos, intenta nuevamente",Toast.LENGTH_LONG).show()
             }else{
                 insertarTipoHabitacion()
@@ -46,7 +49,7 @@ class insercionTipoHabitacion : AppCompatActivity() {
 
     private fun insertarTipoHabitacion(){
 
-        var url = "https://proyectofinalyd.000webhostapp.com/MiguelAndroid/habitaciones/tb_tipoHabitacion/tipoHabitacionInsertar.php"
+        var url = "https://proyectofinalyd.000webhostapp.com/MiguelAndroid/habitaciones/tb_tipoHabitacion/insertarTipoHabitacion.php"
         var queue= Volley.newRequestQueue(this);
         var resultadoResquest = object : StringRequest(
             Request.Method.POST,url,
@@ -61,6 +64,7 @@ class insercionTipoHabitacion : AppCompatActivity() {
                 val parametros = HashMap<String, String>()
                 parametros.put("codigo_tpH", cajaCodigoTipoHabIN?.text.toString());
                 parametros.put("tipo_tpH", cajaTipoHabIN?.text.toString());
+                parametros.put("valor_tpH", cajaPrecioTipoHabIN?.text.toString());
                 return parametros;
             }
         }

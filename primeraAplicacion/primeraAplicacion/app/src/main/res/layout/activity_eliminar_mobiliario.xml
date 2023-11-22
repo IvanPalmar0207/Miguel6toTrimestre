@@ -47,10 +47,11 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="40dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Codigo del tipo de habitacion:"
+                android:text="Codigo del Mobiliario:"
                 android:textSize="20dp"></TextView>
 
             <EditText
+                android:id="@+id/cajaCodigoMobiliarioEl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
@@ -76,7 +77,7 @@
                 android:textSize="20dp"></TextView>
 
             <EditText
-                android:id="@+id/cajaCodigoTipoHabEliminar"
+                android:id="@+id/cajaCodigoTipoHabEliminarMob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
@@ -109,7 +110,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btnConfimarEliminarTipoHab"
+                android:id="@+id/btnConfimarEliminarMOB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
@@ -121,7 +122,7 @@
                 android:textSize="25dp"></Button>
 
             <Button
-                android:id="@+id/btnVolverELiminarTipoHab"
+                android:id="@+id/btnVolverELiminarMob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"

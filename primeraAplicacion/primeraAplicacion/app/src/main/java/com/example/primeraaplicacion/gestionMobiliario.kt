@@ -14,6 +14,7 @@ class gestionMobiliario : AppCompatActivity() {
         val btnVolverMobiliarioGS = findViewById<TextView>(R.id.btnVolverMobiliarioGS)
         val btnInsertarMobiliario = findViewById<Button>(R.id.btnInsertarMobiliario)
         val btnEliminarMobiliario = findViewById<Button>(R.id.btnEliminarMobiliario)
+        val btnSeleccionarMobiliario = findViewById<Button>(R.id.btnSeleccionarMobiliario)
 
         btnVolverMobiliarioGS.setOnClickListener{
             val intent = Intent(applicationContext,gestionHabitacion::class.java)
@@ -27,6 +28,11 @@ class gestionMobiliario : AppCompatActivity() {
 
         btnEliminarMobiliario.setOnClickListener {
             val intent = Intent(applicationContext,eliminarMobiliario::class.java)
+            startActivity(intent)
+        }
+
+        btnSeleccionarMobiliario.setOnClickListener {
+            val intent = Intent(applicationContext,seleccionarMobiliario::class.java)
             startActivity(intent)
         }
 

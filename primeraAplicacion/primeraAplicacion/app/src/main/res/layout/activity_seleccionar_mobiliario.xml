@@ -4,6 +4,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".seleccionarMobiliario">
+    tools:context=".eliminarMobiliario">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="925dp"
+            android:backgroundTint="#FFFFFF"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
+                android:fontFamily="@font/roboto_black"
+                android:text="Seleccionar Mobiliario"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textSize="45dp"></TextView>
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="50dp"
+                app:srcCompat="@drawable/reclutamiento"
+                tools:layout_editor_absoluteX="35dp"
+                tools:layout_editor_absoluteY="79dp"></ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginRight="40dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Codigo del Mobiliario:"
+                android:textSize="20dp"></TextView>
+
+            <EditText
+                android:id="@+id/cajaCodigoMobiliarioSEL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:drawableStart="@drawable/baseline_bed_24"
+                android:drawableTint="@color/green"
+                android:duplicateParentState="false"
+                android:fontFamily="@font/roboto_medium"
+                android:inputType="text"
+                android:padding="15dp"
+                android:textAlignment="center"
+                android:textColorHint="@color/black"></EditText>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnConfimarEliminarMOB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/roboto_black"
+                android:onClick="solicitudActualizarMob"
+                android:text="Siguiente"
+                android:textSize="25dp"></Button>
+
+            <TextView
+                android:id="@+id/btnVolverSeleccionMOB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:layout_marginRight="40dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Volver Atras"
+                android:textSize="18dp"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

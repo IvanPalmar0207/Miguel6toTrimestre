@@ -17,12 +17,15 @@ class actualizarTipoHabitacion : AppCompatActivity() {
 
     var cajaActualizarTipoHab:EditText?=null
     var textoCodigoTipoHabitacion:TextView?=null
+    var cajaActualizarPrecio:EditText?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actualizar_tipo_habitacion)
 
         textoCodigoTipoHabitacion = findViewById(R.id.textoCodigoTipoHabitacion)
         cajaActualizarTipoHab = findViewById(R.id.cajaActualizarTipoHab)
+        cajaActualizarPrecio = findViewById(R.id.cajaActualizarPrecio)
+
         val codigo_tpH = intent.getStringExtra("codigo_tpH").toString()
 
         val btnVolverActualizarTpHab = findViewById<TextView>(R.id.btnVolverActualizarTpHab)
@@ -35,6 +38,7 @@ class actualizarTipoHabitacion : AppCompatActivity() {
             { response ->
                 textoCodigoTipoHabitacion?.setText(response.getString("codigo_tpH"))
                 cajaActualizarTipoHab?.setText(response.getString("tipo_tpH"))
+                cajaActualizarPrecio?.setText(response.getString("valor_tpH"))
 
             }, { error ->
                 Toast.makeText(this, "No se encontro ninguna habitacion con ese codigo", Toast.LENGTH_LONG).show()
@@ -52,7 +56,9 @@ class actualizarTipoHabitacion : AppCompatActivity() {
 
         btnActualizarTipoHab.setOnClickListener {
             val tipo_tpH = cajaActualizarTipoHab?.text.toString()
-            if(tipo_tpH.equals("")){
+            val precio_tpH = cajaActualizarPrecio?.text.toString()
+
+            if(tipo_tpH.equals("") || precio_tpH.equals("")){
                 Toast.makeText(applicationContext,"Los campos no pueden estar vacios",Toast.LENGTH_LONG).show()
             }else{
                 actualizarTipoHabitacion()
@@ -77,6 +83,7 @@ class actualizarTipoHabitacion : AppCompatActivity() {
             override fun  getParams(): MutableMap<String, String> {
                 val parametros = HashMap<String, String>()
                 parametros.put("tipo_tpH", cajaActualizarTipoHab?.text.toString());
+                parametros.put("valor_tpH", cajaActualizarPrecio?.text.toString());
                 return parametros;
             }
         }

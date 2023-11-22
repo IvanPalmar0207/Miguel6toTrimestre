@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="43dp"
                 android:layout_marginRight="40dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="20dp"
                 android:textSize="24dp"
                 android:textAlignment="textStart"
                 android:fontFamily="@font/roboto_mediumitalic"
@@ -74,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="40dp"
                 android:drawableStart="@drawable/baseline_supervised_user_circle_24"
                 android:drawableTint="@color/green"
@@ -84,6 +84,33 @@
                 android:textSize="24dp"
                 android:textAlignment="center"
                 ></EditText>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="20dp"
+                android:textSize="24dp"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/roboto_mediumitalic"
+                android:text="Precio del tipo de habitacion">
+            </TextView>
+
+            <EditText
+                android:id="@+id/cajaActualizarPrecio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:drawableStart="@drawable/baseline_bed_24"
+                android:drawableTint="@color/green"
+                android:fontFamily="@font/roboto_medium"
+                android:inputType="text"
+                android:padding="15dp"
+                android:textAlignment="center"
+                android:textSize="24dp"></EditText>
 
             <RelativeLayout
                 android:layout_width="match_parent"

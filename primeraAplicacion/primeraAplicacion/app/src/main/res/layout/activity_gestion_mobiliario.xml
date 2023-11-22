@@ -55,7 +55,7 @@
                 android:textSize="23dp"></Button>
 
             <Button
-                android:id="@+id/btnSeleccionarTpHab"
+                android:id="@+id/btnSeleccionarMobiliario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"

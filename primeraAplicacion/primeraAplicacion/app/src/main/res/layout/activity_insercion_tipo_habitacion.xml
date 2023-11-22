@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="25dp"
             android:fontFamily="@font/roboto_black"
             android:text="Insercion de Tp.Habitacion"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="43dp"
             android:layout_marginRight="40dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="40dp"
             android:textSize="22dp"
             android:textAlignment="textStart"
             android:fontFamily="@font/roboto_mediumitalic"
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="43dp"
             android:layout_marginRight="40dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
             android:textSize="22dp"
             android:textAlignment="textStart"
             android:fontFamily="@font/roboto_mediumitalic"
@@ -74,6 +74,33 @@
             android:inputType="text"
             android:padding="15dp"
             android:textAlignment="center"></EditText>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="40dp"
+            android:textSize="22dp"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/roboto_mediumitalic"
+            android:text="Precio de la habitacion">
+        </TextView>
+
+        <EditText
+            android:id="@+id/cajaPrecioTipoHabIN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:drawableStart="@drawable/baseline_mark_email_read_24"
+            android:drawableTint="@color/green"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textAlignment="center"></EditText>
+
+
 
         <RelativeLayout
             android:layout_width="match_parent"

@@ -4,6 +4,175 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".actualizarMobiliario">
+    tools:context=".insertarMobiliario">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="925dp"
+            android:backgroundTint="#FFFFFF"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="25dp"
+                android:fontFamily="@font/roboto_black"
+                android:text="Agregar Mobiliario"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textSize="45dp"></TextView>
+
+            <EditText
+                android:id="@+id/cajaCamasSencillasAC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="40dp"
+                android:drawableStart="@drawable/baseline_single_bed_24"
+                android:drawableTint="@color/green"
+                android:duplicateParentState="false"
+                android:fontFamily="@font/roboto_medium"
+                android:hint="No. Camas Sencillas"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textAlignment="center"
+                android:textColorHint="@color/black"></EditText>
+
+            <EditText
+                android:id="@+id/cajaCamasDoblesAC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="40dp"
+                android:drawableStart="@drawable/baseline_bed_24"
+                android:drawableTint="@color/green"
+                android:fontFamily="@font/roboto_medium"
+                android:hint="No. Camas Dobles"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textAlignment="center"
+                android:textColorHint="@color/black"></EditText>
+
+            <EditText
+                android:id="@+id/cajaCamasTriplesAC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="40dp"
+                android:drawableStart="@drawable/baseline_king_bed_24"
+                android:drawableTint="@color/green"
+                android:fontFamily="@font/roboto_medium"
+                android:hint="No. Camas Triples"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textAlignment="center"
+                android:textColorHint="@color/black"></EditText>
+
+            <EditText
+                android:id="@+id/cajaCamasMatrimonialesAC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="40dp"
+                android:drawableStart="@drawable/baseline_local_florist_24"
+                android:drawableTint="@color/green"
+                android:fontFamily="@font/roboto_medium"
+                android:hint="No. Camas Matrimoniales"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textAlignment="center"
+                android:textColorHint="@color/black"></EditText>
+
+            <EditText
+                android:id="@+id/cajaTelevisoresAC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="20dp"
+                android:drawableStart="@drawable/baseline_tv_24"
+                android:drawableTint="@color/green"
+                android:fontFamily="@font/roboto_medium"
+                android:hint="No. Televisores"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textAlignment="center"
+                android:textColorHint="@color/black"></EditText>
+
+            <EditText
+                android:id="@+id/cajaBanosAC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="40dp"
+                android:drawableStart="@drawable/baseline_bathroom_24"
+                android:drawableTint="@color/green"
+                android:fontFamily="@font/roboto_medium"
+                android:hint="No. Baños"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textAlignment="center"
+                android:textColorHint="@color/black"></EditText>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="137dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="50dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnActualizarMobiliario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="25dp"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/roboto_black"
+                android:text="Actualizar Mobiliario"
+                android:textSize="25dp"></Button>
+
+            <TextView
+                android:id="@+id/btnVolverGSAC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="18dp"
+                android:text="Volver Atras"
+                android:textAlignment="center"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

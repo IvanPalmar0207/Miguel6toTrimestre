@@ -70,7 +70,7 @@ class insertarMobiliario : AppCompatActivity() {
                 val intent = Intent(applicationContext, gestionMobiliario::class.java)
                 startActivity(intent)
             }, Response.ErrorListener { error ->
-                Toast.makeText(this, "Error al ingresar usuario $error", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Error al ingresar mobiliario, error: $error", Toast.LENGTH_LONG).show()
             }){
             override fun  getParams(): MutableMap<String, String> {
                 val parametros = HashMap<String, String>()
