@@ -57,21 +57,15 @@
             android:textColorHint="@color/black"
             android:textAlignment="center"></EditText>
 
-        <EditText
+        <Spinner
             android:id="@+id/codigotpd"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="30dp"
-            android:layout_marginRight="40dp"
-            android:drawableStart="@drawable/baseline_drive_file_rename_outline_24"
-            android:drawableTint="@color/green"
-            android:fontFamily="@font/roboto_medium"
-            android:inputType="text"
-            android:padding="15dp"
-            android:hint="Tipo de Documento"
-            android:textColorHint="@color/black"
-            android:textAlignment="center"></EditText>
+            android:layout_marginRight="35dp"
+            android:backgroundTint="@color/green"
+            android:textAlignment="center"></Spinner>
 
         <EditText
             android:id="@+id/numeroDocumento_usu"
@@ -138,21 +132,15 @@
             android:textColorHint="@color/black"
             android:textAlignment="center"></EditText>
 
-        <EditText
+        <Spinner
             android:id="@+id/codigorl"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="80dp"
             android:layout_marginTop="30dp"
-            android:layout_marginRight="40dp"
-            android:drawableStart="@drawable/baseline_verified_user_24"
-            android:drawableTint="@color/green"
-            android:fontFamily="@font/roboto_medium"
-            android:inputType="number"
-            android:padding="15dp"
-            android:textColorHint="@color/black"
-            android:hint="Rol de Usuario"
-            android:textAlignment="center"></EditText>
+            android:layout_marginRight="35dp"
+            android:backgroundTint="@color/green"
+            android:textAlignment="center"></Spinner>
 
 
         <RelativeLayout
