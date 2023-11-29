@@ -10,7 +10,7 @@
     android:fontFamily="@font/roboto_medium"
     android:padding="15dp"
     android:textAlignment="center"
-    android:textSize="18dp">
+    android:textSize="21dp">
 
 </TextView>
 

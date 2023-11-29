@@ -78,7 +78,7 @@ class Registrarse : AppCompatActivity() {
                 }
             }, { error ->
                 Toast.makeText(this, "No se encontro ningun rol de usuario", Toast.LENGTH_LONG).show()
-                val intent = Intent(applicationContext,gestionMobiliario::class.java)
+                val intent = Intent(applicationContext,menuPrincipal::class.java)
                 startActivity(intent)
             }
         )
@@ -119,7 +119,7 @@ class Registrarse : AppCompatActivity() {
                 }
             }, { error ->
                 Toast.makeText(this, "No se encontro ningun tipo de documento", Toast.LENGTH_LONG).show()
-                val intent = Intent(applicationContext,gestionMobiliario::class.java)
+                val intent = Intent(applicationContext,menuPrincipal::class.java)
                 startActivity(intent)
             }
         )
