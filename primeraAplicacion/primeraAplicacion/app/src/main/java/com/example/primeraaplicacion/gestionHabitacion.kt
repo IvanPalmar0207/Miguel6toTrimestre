@@ -15,6 +15,7 @@ class gestionHabitacion : AppCompatActivity() {
         val btnVolverGHab = findViewById<Button>(R.id.btnVolverGHab)
         val btnTipoHabitacion = findViewById<Button>(R.id.btnTipoHabitacion)
         val btnMobiliario = findViewById<Button>(R.id.btnMobiliario)
+        val btnHabitacion = findViewById<Button>(R.id.btnHabitacion)
 
         btnVolverGHab.setOnClickListener {
             val intent = Intent(applicationContext, menuPrincipal::class.java)
@@ -28,6 +29,11 @@ class gestionHabitacion : AppCompatActivity() {
 
         btnMobiliario.setOnClickListener {
             val intent = Intent(applicationContext,gestionMobiliario::class.java)
+            startActivity(intent)
+        }
+
+        btnHabitacion.setOnClickListener {
+            val intent = Intent(applicationContext, gestionHabitaciones::class.java)
             startActivity(intent)
         }
 

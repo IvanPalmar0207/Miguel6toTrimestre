@@ -16,6 +16,9 @@
         android:theme="@style/Theme.PrimeraAplicacion"
         tools:targetApi="31">
         <activity
+            android:name=".gestionHabitaciones"
+            android:exported="false" />
+        <activity
             android:name=".eliminarMobiliario"
             android:exported="false" />
         <activity
