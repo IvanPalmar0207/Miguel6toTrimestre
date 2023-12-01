@@ -28,14 +28,15 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="43dp"
             android:layout_marginRight="40dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="50dp"
             android:textSize="24dp"
             android:textAlignment="textStart"
             android:fontFamily="@font/roboto_mediumitalic"
-            android:text="Ingresa tu correo electronico">
+            android:text="Ingresa tu Nro. Documento">
         </TextView>
 
         <EditText
+            android:id="@+id/numeroDocumentoLG"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
@@ -57,10 +58,37 @@
             android:textSize="24dp"
             android:textAlignment="textStart"
             android:fontFamily="@font/roboto_mediumitalic"
+            android:text="Ingresa tu email:">
+        </TextView>
+
+        <EditText
+            android:id="@+id/emailLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:drawableStart="@drawable/baseline_mark_email_read_24"
+            android:drawableTint="@color/green"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textAlignment="center"></EditText>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="30dp"
+            android:textSize="24dp"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/roboto_mediumitalic"
             android:text="Ingresa tu contraseña">
         </TextView>
 
         <EditText
+            android:id="@+id/contrasenaLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"

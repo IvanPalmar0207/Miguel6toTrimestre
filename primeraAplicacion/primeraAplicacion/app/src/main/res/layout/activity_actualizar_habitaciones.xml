@@ -1,9 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".actualizarHabitaciones">
+    tools:context=".MainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="925dp"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="Actualizar Habitacion"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="45dp"></TextView>
+
+        <EditText
+            android:id="@+id/descripcionHabitacionAH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="40dp"
+            android:drawableStart="@drawable/baseline_how_to_reg_24"
+            android:drawableTint="@color/green"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="text"
+            android:padding="15dp"
+            android:hint="Descripcion de la habitacion"
+            android:textColorHint="@color/black"
+            android:textAlignment="center"></EditText>
+
+        <EditText
+            android:id="@+id/minimoPersonasAH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:drawableStart="@drawable/baseline_drive_file_rename_outline_24"
+            android:drawableTint="@color/green"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="number"
+            android:padding="15dp"
+            android:hint="Minimo de personas"
+            android:textColorHint="@color/black"
+            android:textAlignment="center"></EditText>
+
+        <EditText
+            android:id="@+id/maximoPersonasAH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="20dp"
+            android:drawableStart="@drawable/baseline_mark_email_read_24"
+            android:drawableTint="@color/green"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColorHint="@color/black"
+            android:hint="Maximo de Personas"
+            android:textAlignment="center"></EditText>
+
+        <EditText
+            android:id="@+id/imagenHabitacionAH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"
+            android:drawableStart="@drawable/baseline_password_24"
+            android:drawableTint="@color/green"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType=""
+            android:padding="15dp"
+            android:textColorHint="@color/black"
+            android:hint="Imagen de la habitacion"
+            android:textAlignment="center"></EditText>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="50dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnActualizarHabitacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="-50dp"
+            android:layout_marginRight="25dp"
+            android:backgroundTint="@color/green"
+            android:fontFamily="@font/roboto_black"
+            android:text="Actualizar"
+            android:textSize="25dp"></Button>
+
+        <TextView
+            android:id="@+id/btnVolverGestionHABA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25px"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Volver atras"
+            android:textAlignment="center"></TextView>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

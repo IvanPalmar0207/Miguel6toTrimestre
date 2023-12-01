@@ -19,7 +19,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="25dp"
             android:fontFamily="@font/roboto_black"
-            android:text="Mobiliario de la Habitaciones"
+            android:text="Gestion de Habitaciones"
             android:textAlignment="center"
             android:textColor="@color/green"
             android:textSize="45dp"></TextView>
@@ -31,7 +31,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="40dp"
             android:layout_marginRight="50dp"
-            app:srcCompat="@drawable/lugar_de_trabajo"
+            app:srcCompat="@drawable/pasillo"
             tools:layout_editor_absoluteX="35dp"
             tools:layout_editor_absoluteY="79dp"></ImageView>
 
@@ -39,32 +39,32 @@
             android:id="@+id/btnInsertarHabitacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="40dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginRight="20dp"
             android:backgroundTint="@color/green"
             android:drawableEnd="@drawable/baseline_how_to_reg_24"
             android:drawableTint="@color/white"
             android:fontFamily="@font/roboto_black"
-            android:text="Insercion De Mobiliario"
+            android:text="Insercion de habitaciones"
             android:textSize="23dp"></Button>
 
         <Button
-            android:id="@+id/btnActualizar"
+            android:id="@+id/btnActualizarHabitacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="25dp"
-            android:backgroundTint="@color/green"
-            android:drawableEnd="@drawable/baseline_how_to_reg_24"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="#FFBF00"
+            android:drawableEnd="@drawable/baseline_update_24"
             android:drawableTint="@color/white"
             android:fontFamily="@font/roboto_black"
-            android:text="Insercion De Mobiliario"
+            android:text="Seleccionar Habitacion"
             android:textSize="23dp"></Button>
 
         <Button
-            android:id="@+id/btnEliminarMobiliario"
+            android:id="@+id/btnEliminarHabitacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -74,7 +74,7 @@
             android:drawableEnd="@drawable/baseline_auto_delete_24"
             android:drawableTint="@color/white"
             android:fontFamily="@font/roboto_black"
-            android:text="Eliminacion de Mobiliario"
+            android:text="Eliminar Habitacion"
             android:textSize="23dp"></Button>
 
         <RelativeLayout
@@ -96,15 +96,15 @@
 
 
         <TextView
-            android:id="@+id/btnVolverGM"
+            android:id="@+id/btnVolverGH"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginRight="25px"
+            android:layout_marginRight="65px"
             android:textSize="17dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="Gestion de Habitaciones"
+            android:text="Volver al menu principal"
             android:textAlignment="center"></TextView>
 
     </LinearLayout>

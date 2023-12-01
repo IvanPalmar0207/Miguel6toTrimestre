@@ -56,7 +56,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/colorAmarillo"
             android:drawableEnd="@drawable/baseline_update_24"
             android:drawableTint="@color/white"
             android:fontFamily="@font/roboto_black"
